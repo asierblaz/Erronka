@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextWatcher;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -46,7 +48,6 @@ public class ListaProductos extends AppCompatActivity {
 
         //funciones
         buscarButton.setOnClickListener(this::buscar);
-
         //Evento categoria
         catSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -77,11 +78,11 @@ public class ListaProductos extends AppCompatActivity {
         });
     }
 
+
     //imprime todos los productos
     public void imprimirTodos() {
         produktuak= Produktua.produktuak;
         produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuak);
-
         listaProductos.setAdapter(produktuakAdapter);
     }
 
@@ -93,28 +94,31 @@ public class ListaProductos extends AppCompatActivity {
             if (p.getCategoria().toLowerCase().equals(categoria.toLowerCase()) ){
                 prods.add(p);
             }
-            produktuak=prods;
-            produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuak);
+            produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, prods);
             listaProductos.setAdapter(produktuakAdapter);
 
         }
     }
 
     public void buscar(View V){
-        printByName(txtBuscar.getText().toString());
+        printByName(txtBuscar.getText().toString().toLowerCase());
     }
 
 
     public void printByName(String name){
         ArrayList<Produktua> prods = new ArrayList<Produktua>();
-        for (Produktua p : Produktua.produktuak) {
-            if (p.getName().equals(name)) {
-                prods.add(p);
+        if (!name.isEmpty()) {
+            for (Produktua p : Produktua.produktuak) {
+                if (p.getName().toLowerCase().contains(name)) {
+                    prods.add(p);
+                }
+                produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, prods);
+                listaProductos.setAdapter(produktuakAdapter);
+
             }
-            produktuak=prods;
+        } else {
             produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuak);
             listaProductos.setAdapter(produktuakAdapter);
-
         }
     }
 

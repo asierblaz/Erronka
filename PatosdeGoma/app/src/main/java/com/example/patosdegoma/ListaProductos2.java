@@ -65,34 +65,53 @@ public class ListaProductos2 extends AppCompatActivity implements SearchView.OnQ
 
     @Override
     public boolean onQueryTextChange(String s) {
+
         filtrado(s);
         return false;
     }
 
 
-    public void filtrado(String txtBuscar){
-        int longitud = txtBuscar.length();
-        if(longitud==0){
-            produktuakfiltro.clear();
-            produktuakfiltro.addAll(produktuak);
+//    public void filtrado(String txtBuscar){
+//        int longitud = txtBuscar.length();
+//
+//        if(longitud==0){
+//            produktuakfiltro.clear();
+//            produktuakfiltro.addAll(produktuak);
+//
+//        } else{
+//            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
+//                List<Produktua> collection = produktuakfiltro.stream()
+//                        .filter(i -> i.getName().toLowerCase().contains(txtBuscar.toLowerCase()))
+//                        .collect(Collectors.toList());
+//                produktuakfiltro.clear();
+//                produktuakfiltro.addAll(collection);
+//            }
+//            else{
+//                for(Produktua p:produktuak){
+//                    if(p.getName().toLowerCase().contains(txtBuscar.toLowerCase())){
+//                        produktuakfiltro.add(p);
+//                    }
+//                }
+//            }
+//        }
+//        produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuakfiltro);
+//        listaProductos.setAdapter(produktuakAdapter);
+//    }
 
-        } else{
-            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-                List<Produktua> collection = produktuakfiltro.stream()
-                        .filter(i -> i.getName().toLowerCase().contains(txtBuscar.toLowerCase()))
-                        .collect(Collectors.toList());
-                produktuakfiltro.clear();
-                produktuakfiltro.addAll(collection);
-            }
-            else{
-                for(Produktua p:produktuak){
-                    if(p.getName().toLowerCase().contains(txtBuscar.toLowerCase())){
-                        produktuakfiltro.add(p);
-                    }
+    public void filtrado(String name){
+        ArrayList<Produktua> prods = new ArrayList<Produktua>();
+        if (!name.isEmpty()) {
+            for (Produktua p : Produktua.produktuak) {
+                if (p.getName().toLowerCase().contains(name)) {
+                    prods.add(p);
                 }
+                produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, prods);
+                listaProductos.setAdapter(produktuakAdapter);
+
             }
+        } else {
+            produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuak);
+            listaProductos.setAdapter(produktuakAdapter);
         }
-        produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuakfiltro);
-        listaProductos.setAdapter(produktuakAdapter);
     }
 }
