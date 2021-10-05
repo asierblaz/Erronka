@@ -1,5 +1,7 @@
 package eus.uni.dam;
 
+import java.util.ArrayList;
+
 public class Produktua {
 
 	private int id;
@@ -7,7 +9,7 @@ public class Produktua {
 	private String categoria;
 	private float prezioa;
 	private String imagen;
-	
+	public static ArrayList<Produktua> produktuak = new ArrayList<Produktua>();
 	public Produktua(int id, String name, String categoria, float prezioa, String imagen) {
 		super();
 		this.id = id;

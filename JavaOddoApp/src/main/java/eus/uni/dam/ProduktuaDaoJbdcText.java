@@ -57,6 +57,7 @@ public class ProduktuaDaoJbdcText implements ProduktuaDao {
 	public void insert(Produktua produktua) {
 		// DBan insert-a
 		produktuak.add(produktua);
+		Produktua.produktuak.add(produktua);
 	};
 
 	/** DBan UPDATE bat egin, eta dena ondo balego, memorian be...
@@ -116,7 +117,7 @@ public class ProduktuaDaoJbdcText implements ProduktuaDao {
 			// loop through the result set
 			while (rs.next()) {
 			Produktua p1= new Produktua(rs.getInt("id"),rs.getString("name"),rs.getString(3),rs.getFloat(4),rs.getString("default_code").toLowerCase());
-			produktuak.add(p1);
+			insert(p1);
 			System.out.println(p1);
 			}
 			conn.close();
