@@ -29,6 +29,9 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
     private ArrayAdapter<Produktua> produktuakAdapter = null;
     private ArrayList<Produktua> produktuak = Produktua.produktuak;
     private ArrayList<Produktua> produktuakfiltro = Produktua.produktuak;
+    private ArrayList<Produktua> produktuakActual = Produktua.produktuak;
+
+
     private SearchView search;
 
     @Override
@@ -70,7 +73,7 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
         listaProductos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Produktua p1 = produktuak.get(position);
+                Produktua p1 = produktuakActual.get(position);
                 Intent intent = new Intent(ListaProductos.this, DetallesProductos.class);
                 intent.putExtra("prod", p1);
                 startActivity(intent);
@@ -106,7 +109,8 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
             if (p.getCategoria().toLowerCase().equals(categoria.toLowerCase())) {
                 prods.add(p);
             }
-            produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, prods);
+            produktuakActual=prods;
+            produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuakActual);
             listaProductos.setAdapter(produktuakAdapter);
 
         }
@@ -133,11 +137,13 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
                 if (p.getName().toLowerCase().contains(name)) {
                     prods.add(p);
                 }
-                produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, prods);
+                produktuakActual=prods;
+                produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuakActual);
                 listaProductos.setAdapter(produktuakAdapter);
 
             }
         } else {
+
             produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuak);
             listaProductos.setAdapter(produktuakAdapter);
         }
