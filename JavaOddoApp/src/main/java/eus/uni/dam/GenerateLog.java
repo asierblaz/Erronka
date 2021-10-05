@@ -65,7 +65,7 @@ public class GenerateLog {
 				
 		try {
 			outputStream = new PrintWriter(new FileWriter(filename,true));
-			outputStream.println("Fecha : "+ fecha+ "|  " + s );
+			outputStream.println("Konexio Data : "+ fecha+ "|  " + s );
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
