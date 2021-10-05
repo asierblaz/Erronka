@@ -78,6 +78,7 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
             }
         });
     }
+    //a
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.nav_menu, menu);
