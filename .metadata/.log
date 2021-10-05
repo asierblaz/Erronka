@@ -4475,3 +4475,21 @@ This warning can be switched off on the Team > Git > Confirmations and Warnings 
 
 !ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-10-05 10:05:31.964
 !MESSAGE executing callback sts4.classpath.bKWZUTHd SUCCESS [done]
+
+!ENTRY org.eclipse.ui 2 2 2021-10-05 10:28:36.906
+!MESSAGE Invalid property category path: org.springframework.ide.eclipse.beans.ui.properties.ProjectPropertyPage (bundle: org.springframework.ide.eclipse.xml.namespaces, propertyPage: org.springframework.ide.eclipse.beans.ui.namespaces.projectPropertyPage)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-10-05 10:29:30.163
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-10-05 10:29:30.165
+!MESSAGE classpath=51 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-10-05 10:29:30.167
+!MESSAGE buffering callback sts4.classpath.bKWZUTHd JavaOddoApp false 51
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-10-05 10:29:30.167
+!MESSAGE executing callback sts4.classpath.bKWZUTHd 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2021-10-05 10:29:30.178
+!MESSAGE executing callback sts4.classpath.bKWZUTHd SUCCESS [done]
