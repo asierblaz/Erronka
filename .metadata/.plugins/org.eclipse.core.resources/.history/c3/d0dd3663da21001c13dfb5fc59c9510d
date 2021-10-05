@@ -1,0 +1,43 @@
+package eus.uni.dam;
+
+public class Produktua {
+
+	private int id;
+	private String name;
+	private String categoria;
+	private float prezioa;
+	
+	public Produktua(int id, String name, String categoria, String prezioa) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.categoria = categoria;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+	@Override
+	public String toString() {
+		return "Produktua [id=" + id + ", name=" + name + ", categoria=" + categoria + "]";
+	}
+	
+	
+	
+	
+	
+}

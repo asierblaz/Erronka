@@ -1,0 +1,36 @@
+package eus.uni.dam;
+
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class LogDao {
+	
+	LocalDateTime fecha ;
+	String filename="..\\PatosdeGoma\\app\\src\\main\\res\\raw\\log.csv";
+	
+	
+	
+	public LogDao() {
+	}
+
+
+		
+
+
+		
+
+
+
+}
