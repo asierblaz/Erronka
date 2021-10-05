@@ -21,10 +21,9 @@
 
     <TextView
         android:id="@+id/textNombre"
-        android:layout_width="382dp"
-        android:layout_height="80dp"
+        android:layout_width="373dp"
+        android:layout_height="77dp"
         android:fontFamily="@font/bubblegum_sans"
-        android:text="Cthulhu"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textSize="34sp"
@@ -40,7 +39,6 @@
         android:layout_width="300dp"
         android:layout_height="39dp"
         android:fontFamily="@font/bubblegum_sans"
-        android:text="Misc"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textSize="34sp"
@@ -53,18 +51,17 @@
 
     <TextView
         android:id="@+id/texPrecio"
-        android:layout_width="300dp"
-        android:layout_height="39dp"
+        android:layout_width="186dp"
+        android:layout_height="47dp"
         android:fontFamily="@font/bubblegum_sans"
-        android:text="19.90 €"
         android:textAlignment="textStart"
         android:textAllCaps="false"
         android:textSize="34sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.324"
+        app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.884" />
+        app:layout_constraintVertical_bias="0.885" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

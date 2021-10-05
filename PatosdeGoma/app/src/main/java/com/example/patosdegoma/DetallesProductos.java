@@ -26,7 +26,8 @@ public class DetallesProductos extends AppCompatActivity {
 
         textNombre.setText(p1.getName());
         textCategoria.setText(p1.getCategoria());
-        textPrecio.setText(p1.getPrezioa()+"€");
+        float precio = (float) (p1.getPrezioa()*1.21);
+        textPrecio.setText(String.format("%.2f", precio)+" €");
 
     int imageRes= getResources().getIdentifier("@drawable/nofoto",null,getPackageName());
         Drawable draw= getResources().getDrawable(imageRes);

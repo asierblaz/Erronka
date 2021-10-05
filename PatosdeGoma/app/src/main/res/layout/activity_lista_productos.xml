@@ -27,32 +27,8 @@
         <Spinner
             android:id="@+id/catSpinner"
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
-
-        <TextView
-            android:id="@+id/textView6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Sartu produktuaren izena:" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/txtBuscar"
-                android:layout_width="277dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:editable="true" />
-
-            <Button
-                android:id="@+id/buscarButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bilatu" />
-        </LinearLayout>
+            android:layout_height="60dp"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView3"

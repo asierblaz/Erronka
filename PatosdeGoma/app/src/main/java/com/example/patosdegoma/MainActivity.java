@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void goToListaProductos(View view) {
-        Intent intent = new Intent(this, ListaProductos2.class);
+        Intent intent = new Intent(this, ListaProductos.class);
         startActivity(intent);
     }
 

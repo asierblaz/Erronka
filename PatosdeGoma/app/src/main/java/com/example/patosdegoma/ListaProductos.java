@@ -7,11 +7,14 @@ import android.os.Bundle;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -19,14 +22,15 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 
-public class ListaProductos extends AppCompatActivity {
+public class ListaProductos extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     private Spinner catSpinner;
     private ListView listaProductos;
     private ArrayAdapter<Produktua> produktuakAdapter = null;
     private ArrayList<Produktua> produktuak = Produktua.produktuak;
-    private Button buscarButton;
-    private TextView txtBuscar;
+    private ArrayList<Produktua> produktuakfiltro = Produktua.produktuak;
+    private SearchView search;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,8 +38,6 @@ public class ListaProductos extends AppCompatActivity {
         //definir elementos
         listaProductos = findViewById(R.id.listProductos);
         catSpinner = findViewById(R.id.catSpinner);
-        buscarButton = findViewById(R.id.buscarButton);
-        txtBuscar = findViewById(R.id.txtBuscar);
 
 
         //adapter lista productos
@@ -47,7 +49,6 @@ public class ListaProductos extends AppCompatActivity {
         catSpinner.setAdapter(cats);
 
         //funciones
-        buscarButton.setOnClickListener(this::buscar);
         //Evento categoria
         catSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -78,10 +79,20 @@ public class ListaProductos extends AppCompatActivity {
         });
     }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.nav_menu, menu);
+        MenuItem menuItem = menu.findItem(R.id.app_bar_search);
+        search = (SearchView) menuItem.getActionView();
+
+        search.setQueryHint("");
+        search.setOnQueryTextListener(this);
+        return true;
+    }
+
 
     //imprime todos los productos
     public void imprimirTodos() {
-        produktuak= Produktua.produktuak;
+        produktuak = Produktua.produktuak;
         produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuak);
         listaProductos.setAdapter(produktuakAdapter);
     }
@@ -91,7 +102,7 @@ public class ListaProductos extends AppCompatActivity {
 
         ArrayList<Produktua> prods = new ArrayList<Produktua>();
         for (Produktua p : Produktua.produktuak) {
-            if (p.getCategoria().toLowerCase().equals(categoria.toLowerCase()) ){
+            if (p.getCategoria().toLowerCase().equals(categoria.toLowerCase())) {
                 prods.add(p);
             }
             produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, prods);
@@ -100,12 +111,21 @@ public class ListaProductos extends AppCompatActivity {
         }
     }
 
-    public void buscar(View V){
-        printByName(txtBuscar.getText().toString().toLowerCase());
+
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        filtrado(s);
+        return false;
     }
 
+    @Override
+    public boolean onQueryTextChange(String s) {
 
-    public void printByName(String name){
+        filtrado(s);
+        return false;
+    }
+
+    public void filtrado(String name) {
         ArrayList<Produktua> prods = new ArrayList<Produktua>();
         if (!name.isEmpty()) {
             for (Produktua p : Produktua.produktuak) {

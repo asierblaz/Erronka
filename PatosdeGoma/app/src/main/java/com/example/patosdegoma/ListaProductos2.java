@@ -2,6 +2,10 @@ package com.example.patosdegoma;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -24,14 +28,24 @@ public class ListaProductos2 extends AppCompatActivity implements SearchView.OnQ
     private ArrayAdapter<Produktua> produktuakAdapter = null;
     private ArrayList<Produktua> produktuak = Produktua.produktuak;
     private ArrayList<Produktua> produktuakfiltro = Produktua.produktuak;
-    private SearchView txtBuscar;
+    private SearchView search;
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.nav_menu, menu);
+        MenuItem menuItem = menu.findItem(R.id.app_bar_search);
+        search = (SearchView) menuItem.getActionView();
+
+        search.setQueryHint("");
+        search.setOnQueryTextListener(this);
+        return true;
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_productos2);
         //definir elementos
         listaProductos = findViewById(R.id.listProductos);
-        txtBuscar= findViewById(R.id.txtBuscar);
 
         //adapter lista productos
         produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuak);
@@ -49,12 +63,9 @@ public class ListaProductos2 extends AppCompatActivity implements SearchView.OnQ
                 //Toast.makeText(ListaCat.this, "Has pulsado: "+ p1.getName(), Toast.LENGTH_LONG).show();
             }
         });
-
-        txtBuscar.setOnQueryTextListener(this);
-
-
-
     }
+
+
 
 
     @Override
@@ -69,34 +80,6 @@ public class ListaProductos2 extends AppCompatActivity implements SearchView.OnQ
         filtrado(s);
         return false;
     }
-
-
-//    public void filtrado(String txtBuscar){
-//        int longitud = txtBuscar.length();
-//
-//        if(longitud==0){
-//            produktuakfiltro.clear();
-//            produktuakfiltro.addAll(produktuak);
-//
-//        } else{
-//            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.N) {
-//                List<Produktua> collection = produktuakfiltro.stream()
-//                        .filter(i -> i.getName().toLowerCase().contains(txtBuscar.toLowerCase()))
-//                        .collect(Collectors.toList());
-//                produktuakfiltro.clear();
-//                produktuakfiltro.addAll(collection);
-//            }
-//            else{
-//                for(Produktua p:produktuak){
-//                    if(p.getName().toLowerCase().contains(txtBuscar.toLowerCase())){
-//                        produktuakfiltro.add(p);
-//                    }
-//                }
-//            }
-//        }
-//        produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuakfiltro);
-//        listaProductos.setAdapter(produktuakAdapter);
-//    }
 
     public void filtrado(String name){
         ArrayList<Produktua> prods = new ArrayList<Produktua>();
