@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.text.Html;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,10 @@ public class DetallesProductos extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles_productos);
+        //poner icono en action bar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Patinhos Gomosos </font>"));
         textNombre = findViewById(R.id.textNombre);
         textPrecio = findViewById(R.id.texPrecio);
         textCategoria = findViewById(R.id.textCategoria);
