@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         //poner icono en action bar
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        getSupportActionBar().setTitle("o");
 
         //Carga csv a produktuak
         Produktua.fileToArraylist(this);
