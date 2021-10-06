@@ -16,6 +16,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        //poner icono en action bar
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+
         //Carga csv a produktuak
         Produktua.fileToArraylist(this);
         Produktua.categoriasToArray();
