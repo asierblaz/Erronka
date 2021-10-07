@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PatosdeGoma">
         <activity
+            android:name=".AboutUsActivity"
+            android:exported="true" />
+        <activity
             android:name=".DetallesProductos"
             android:exported="true" />
         <activity

@@ -50,7 +50,9 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
 
         //adapter lista productos
         produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuak);
+
         listaProductos.setAdapter(produktuakAdapter);
+
 
         //Añadir categorias al spinner
         ArrayAdapter<String> cats = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Produktua.categorias);

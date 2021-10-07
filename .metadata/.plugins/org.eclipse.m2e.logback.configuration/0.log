@@ -1819,3 +1819,5 @@
 2021-10-05 10:50:30,171 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2021-10-05 10:50:30,171 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered properties files.
 2021-10-05 10:50:30,171 [Worker-30: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\blazquez.asier\Documents\DAM2\Erronka\JavaOddoApp\src\test\resources
+2021-10-07 09:53:49,027 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2021-10-07 09:53:52,689 [Worker-0: Decoration Calculation] WARN  org.eclipse.jgit.util.FS - Cannot run program "\usr\bin\git" (in directory "\usr\bin"): CreateProcess error=2, El sistema no puede encontrar el archivo especificado
