@@ -34,6 +34,7 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
 
 
     private SearchView search;
+    private ArrayList<Produktua> prods;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -116,7 +117,7 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
             if (p.getCategoria().toLowerCase().equals(categoria.toLowerCase())) {
                 prods.add(p);
             }
-            produktuakActual=prods;
+            produktuakActual = prods;
             produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuakActual);
             listaProductos.setAdapter(produktuakAdapter);
 
@@ -144,7 +145,7 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
                 if (p.getName().toLowerCase().contains(name)) {
                     prods.add(p);
                 }
-                produktuakActual=prods;
+                produktuakActual =prods;
                 produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuakActual);
                 listaProductos.setAdapter(produktuakAdapter);
 
