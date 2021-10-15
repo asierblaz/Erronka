@@ -97,7 +97,6 @@ public class ProduktuaDaoJbdcText implements ProduktuaDao {
 		try {
 
 			conn = DriverManager.getConnection("jdbc:postgresql://192.168.65.15:5432/PatitosdeGoma", "openpg","openpgpwd");
-			//conn = DriverManager.getConnection("jdbc:postgresql://localhost:5432/db_asier_blaz", "openpg","openpgpwd");
 			System.out.println(conn.toString());
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
@@ -109,7 +108,9 @@ public class ProduktuaDaoJbdcText implements ProduktuaDao {
 	//insertar productos al arrayList
 	
 	public void produktuaToArray(List<Produktua> produktuak){
-		String sql = "SELECT product_template.id,product_template.name,product_category.name,product_template.list_price, product_template.default_code FROM product_template inner join product_category on product_template.categ_id = product_category.id ORDER BY product_template.id";
+		String sql = "SELECT product_template.id,product_template.name,product_category.name,product_template.list_price,"
+				+ " product_template.default_code FROM product_template inner join product_category on product_template.categ_id"
+				+ " = product_category.id ORDER BY product_template.id";
 		try (Connection conn = connect();
 				Statement stmt = conn.createStatement();
 				ResultSet rs = stmt.executeQuery(sql)) {

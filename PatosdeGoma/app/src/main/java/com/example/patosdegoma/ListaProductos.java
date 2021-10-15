@@ -85,7 +85,6 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
                 Intent intent = new Intent(ListaProductos.this, DetallesProductos.class);
                 intent.putExtra("prod", p1);
                 startActivity(intent);
-                //Toast.makeText(ListaCat.this, "Has pulsado: "+ p1.getName(), Toast.LENGTH_LONG).show();
             }
         });
     }
