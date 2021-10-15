@@ -10,7 +10,7 @@ Android Aplikazio bat garatu dugu odoon dauden produktuak bistaratzeko, horretar
 Produktuen irakurketa egiteko hurrengo funtzioa erabiltzen dugu:
 
 
-```
+```android
     public static void fileToArraylist(Context c) {
         String separador = ",";
         BufferedReader bufferLectura = null;
