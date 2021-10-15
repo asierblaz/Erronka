@@ -148,6 +148,7 @@ Produktua p1 = (Produktua) getIntent().getSerializableExtra("prod");
 Spring erabilita Odoon dauden produktuen datuak fitxategi batera esportatzen ditugu, horretarako PostgresSql datu base batera egiten dugu konexioa eta produktuen ezaugarriak csv batera esportatzen ditugu,horretaz gain, datu-baseko deskargak eta txertaketak kontrolatzeko log-a ere implementatu dugu.
 
 Hauek dira csv-en formatuak:
+
 *Log.csv*
 
 ```
