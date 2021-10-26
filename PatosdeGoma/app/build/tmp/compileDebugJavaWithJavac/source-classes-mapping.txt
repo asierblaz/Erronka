@@ -1,0 +1,14 @@
+com/example/patosdegoma/BuildConfig.java
+ com.example.patosdegoma.BuildConfig
+com/example/patosdegoma/Produktua.java
+ com.example.patosdegoma.Produktua
+com/example/patosdegoma/DetallesProductos.java
+ com.example.patosdegoma.DetallesProductos
+com/example/patosdegoma/AboutUsActivity.java
+ com.example.patosdegoma.AboutUsActivity
+com/example/patosdegoma/MainActivity.java
+ com.example.patosdegoma.MainActivity
+com/example/patosdegoma/ListaProductos.java
+ com.example.patosdegoma.ListaProductos
+ com.example.patosdegoma.ListaProductos$1
+ com.example.patosdegoma.ListaProductos$2
