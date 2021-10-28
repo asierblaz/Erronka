@@ -6,9 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.text.Html;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -40,6 +44,20 @@ public class ListaVentas extends Activity {
         });
 
     }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.nav_menu, menu);
+        MenuItem menuItem = menu.findItem(R.id.app_create_sale);
+        menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                Intent intent = new Intent(ListaVentas.this, CrearPedido.class);
+                return true;
+            }
+        });
+        return true;
+    }
+
 
     public Connection Connect() {
         String url = "jdbc:postgresql://192.168.65.15:5432/PatitosdeGoma";

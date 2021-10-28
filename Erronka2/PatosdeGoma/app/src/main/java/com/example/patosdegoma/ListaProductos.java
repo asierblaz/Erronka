@@ -32,8 +32,6 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
     private ArrayList<Produktua> produktuak = Produktua.produktuak;
     private ArrayList<Produktua> produktuakfiltro = Produktua.produktuak;
     public ArrayList<Produktua> produktuakActual = Produktua.produktuak;
-
-
     private SearchView search;
 
     String url = "jdbc:postgresql://192.168.65.15:5432/PatitosdeGoma";
