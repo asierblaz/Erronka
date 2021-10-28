@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private Button verListaProductosBtn;
+    private Button verListaVentasBtn;
     private MenuItem aboutUs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +25,13 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Patinhos Gomosos </font>"));
-        //Carga csv a produktuak
-        Produktua.fileToArraylist(this);
-        Produktua.categoriasToArray();
+
         verListaProductosBtn = findViewById(R.id.verProductosButton);
+        verListaVentasBtn = findViewById(R.id.verVentasButton);
+
         verListaProductosBtn.setOnClickListener(this::goToListaProductos);
+        verListaVentasBtn.setOnClickListener(this::goToListaVentas);
+        Produktua.categorias.add("Guztiak");
 
     }
 // funcion para crear el menu
@@ -58,6 +61,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToListaProductos(View view) {
         Intent intent = new Intent(this, ListaProductos.class);
+        startActivity(intent);
+    }
+    public void goToListaVentas(View view) {
+        Intent intent = new Intent(this, ListaVentas.class);
         startActivity(intent);
     }
 

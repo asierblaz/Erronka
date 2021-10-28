@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">Patinhos Gomosos</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="produktuak">PRODUKTUAK</string>
+    <string name="salmentak">SALMENTAK</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>

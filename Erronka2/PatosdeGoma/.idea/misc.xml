@@ -1,5 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/layout/activity_detalles_productos.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/layout/activity_lista_productos.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/layout/activity_lista_ventas.xml" value="0.1838768115942029" />
+        <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
+        <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/layout/activity_salmentak.xml" value="0.19021739130434784" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

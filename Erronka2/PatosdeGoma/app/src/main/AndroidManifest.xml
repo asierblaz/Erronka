@@ -13,6 +13,9 @@
             android:name=".AboutUsActivity"
             android:exported="true" />
         <activity
+            android:name=".ListaVentas"
+            android:exported="true" />
+        <activity
             android:name=".DetallesProductos"
             android:exported="true" />
         <activity
@@ -28,5 +31,5 @@
             </intent-filter>
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET"/>
 </manifest>

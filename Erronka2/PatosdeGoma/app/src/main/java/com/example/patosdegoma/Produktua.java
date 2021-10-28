@@ -29,9 +29,6 @@ public class Produktua implements Serializable {
         this.imagen=imagen;
     }
 
-    public Produktua() {
-    }
-
     public int getId() {
         return id;
     }
@@ -80,11 +77,12 @@ public class Produktua implements Serializable {
     public String toString() {
         return this.getName() + "\n";
     }
+    public String toStringAll() {
+        return this.getId() + "\t"+ this.getName() +"\t" + this.getCategoria() +"\t" + this.getPrezioa() +"\t" + this.getImagen() + "\n";
+    }
 
     public static void categoriasToArray() {
-        categorias.add("Guztiak");
         for (Produktua p : produktuak) {
-
             if (!esta(p.getCategoria())) {
                 categorias.add(p.getCategoria());
             }
@@ -99,43 +97,6 @@ public class Produktua implements Serializable {
         }
         return false;
     }
-
-    public static void fileToArraylist(Context c) {
-        String separador = ",";
-        BufferedReader bufferLectura = null;
-        try {
-            InputStream is = c.getResources().openRawResource(R.raw.produktuak);
-
-            // Abrir el .csv en buffer de lectura
-            bufferLectura = new BufferedReader(new InputStreamReader(is, Charset.forName("UTF-8")));
-            // Leer una linea del archivo
-            String linea = bufferLectura.readLine();
-            while (linea != null) {
-
-                // Sepapar la linea leída con el separador definido previamente
-                String[] campos = linea.split(separador);
-                Produktua p1 = new Produktua(Integer.parseInt(campos[0]), campos[1], campos[2], Float.parseFloat(campos[3]),campos[4]);
-                Produktua.produktuak.add(p1);
-
-                // Volver a leer otra línea del fichero
-                linea = bufferLectura.readLine();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            // Cierro el buffer de lectura
-            if (bufferLectura != null) {
-                try {
-                    bufferLectura.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-
-
-    }
-
 
 }
 
