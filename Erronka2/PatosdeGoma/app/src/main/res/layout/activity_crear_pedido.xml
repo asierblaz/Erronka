@@ -2,22 +2,50 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addLine"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CrearPedido">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="118dp"
-        android:layout_height="163dp"
-        android:layout_marginStart="149dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginEnd="110dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/BezeroaSpinner"
+        app:layout_constraintBottom_toTopOf="@+id/BezeroakSpinner"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Spinner
+        android:id="@+id/BezeroakSpinner"
+        android:layout_width="364dp"
+        android:layout_height="48dp"
+        android:dropDownWidth="wrap_content"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toTopOf="@+id/LinesLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.237" />
+        app:layout_constraintVertical_bias="0.396" />
+
+    <LinearLayout
+        android:id="@+id/LinesLayout"
+        android:layout_width="355dp"
+        android:layout_height="412dp"
+        android:layout_marginBottom="44dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="321dp"
+        android:layout_height="72dp"
+        android:text="@string/linea"
+        app:layout_constraintBottom_toTopOf="@+id/LinesLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BezeroakSpinner" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -18,19 +18,26 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-public class ListaVentas extends Activity {
+import androidx.appcompat.app.AppCompatActivity;
+
+public class ListaVentas extends AppCompatActivity {
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_ventas);
+
         Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
         SalmentakQuery.setPriority(Thread.MAX_PRIORITY);
         SalmentakQuery.start();
 
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Patinhos Gomosos </font>"));
+
         ListView Lista = findViewById(R.id.Lista);
-        Log.d("TAG", Salmenta.salmentak.toString());
+        //Log.d("TAG", Salmenta.salmentak.toString());
         ArrayAdapter<Salmenta> salmentaArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Salmenta.salmentak);
         Lista.setAdapter(salmentaArrayAdapter);
 
@@ -38,23 +45,34 @@ public class ListaVentas extends Activity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Salmenta s1 = Salmenta.salmentak.get(i);
-                Log.d("TAG", s1.toStringAll());
+                //Log.d("TAG", s1.toStringAll());
 
+            }
+        });
+
+        findViewById(R.id.salmentakbtn).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ListaVentas.this, CrearPedido.class);
+                startActivity(intent);
             }
         });
 
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.nav_menu, menu);
+        getMenuInflater().inflate(R.menu.pv_menu, menu);
         MenuItem menuItem = menu.findItem(R.id.app_create_sale);
-        menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+        /*menuItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem menuItem) {
                 Intent intent = new Intent(ListaVentas.this, CrearPedido.class);
+                //intent.putExtra("iDpedido", Salmenta.salmentak.get(0).getId());
+                startActivity(intent);
+                Log.d("TAG", intent.getAction());
                 return true;
             }
-        });
+        });*/
         return true;
     }
 
@@ -94,11 +112,11 @@ public class ListaVentas extends Activity {
                         rs.getFloat(10)
                 );
                 Salmenta.salmentak.add(s);
-                Log.d("Salmenta", s.toString());
+                //Log.d("Salmenta", s.toString());
             }
             conn.close();
         } catch (Exception e) {
-            Log.d("TAG", "run: Failed"+ e.getMessage());
+            Log.d("Exception", "run: Failed"+ e.getMessage());
         }
     });
 
