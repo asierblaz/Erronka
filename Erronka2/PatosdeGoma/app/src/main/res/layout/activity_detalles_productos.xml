@@ -2,11 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bgpng"
-    tools:context=".MainActivity"
-    android:id="@+id/Layout">
+    tools:context=".MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -64,5 +64,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.885" />
+
+    <ImageView
+        android:id="@+id/addCarrito"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="28dp"
+        android:contentDescription="addCarrito"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/add_carrito_48" />
+
+    <EditText
+        android:id="@+id/kantText"
+        android:layout_width="89dp"
+        android:layout_height="58dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:hint="Kantitatea"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/addCarrito"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     <string name="produktuak">PRODUKTUAK</string>
     <string name="salmentak">SALMENTAK</string>
     <string name="linea">Eskaera lerroa gehitu</string>
-    <string name="BezeroaSpinner">Bezeroa:</string>
+    <string name="BezeroaSpinner">   Bezeroa:</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>

@@ -14,14 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Locale;
 
 
 public class ListaProductos extends AppCompatActivity implements SearchView.OnQueryTextListener {
@@ -42,27 +35,22 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_productos);
-        //poner icono en action bar
+
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Patinhos Gomosos </font>"));
-        //definir elementos
+
         listaProductos = findViewById(R.id.listProductos);
         catSpinner = findViewById(R.id.catSpinner);
         Thread.currentThread().setPriority(1);
-        ProduktuakQuery.setPriority(10);
-        ProduktuakQuery.start();
+        DataConnect.ProduktuakQuery();
 
-        //adapter lista productos
         produktuakAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, produktuak);
         listaProductos.setAdapter(produktuakAdapter);
 
-        //Añadir categorias al spinner
         ArrayAdapter<String> cats = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Produktua.categorias);
         catSpinner.setAdapter(cats);
 
-        //funciones
-        //Evento categoria
         catSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -74,7 +62,6 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
             }
         });
 
-        //evento list View
         listaProductos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
@@ -86,7 +73,6 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
             }
         });
     }
-    //a
 
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.nav_menu, menu);
@@ -98,55 +84,7 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
         return true;
     }
 
-    public Connection Connect() {
-        try {
-            Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection(url, user, pass);
-            Log.d("Connection", conn.toString());
-            return conn;
-        } catch (SQLException se) {
-            Log.d("SQLException", "oops! No se puede conectar. Error: " + se.toString());
-        } catch (ClassNotFoundException e) {
-            Log.d("ClassNotFoundException", "oops! No se encuentra la clase. Error: " + e.getMessage());
-        }
-        return null;
-    }
-
-    Thread ProduktuakQuery = new Thread(() ->
-    {
-        try {
-            String query = "select product_template.id, product_template.name, product_category.complete_name as category, product_template.list_price, product_template.default_code from product_template\n" +
-                    "inner join product_category on product_template.categ_id =product_category.id \n" +
-                    "order by name asc";
-            Connection conn = Connect();
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            while (rs.next()) {
-                Produktua p = new Produktua(
-                        rs.getInt(1), rs.getString(2), rs.getString(3),
-                        rs.getFloat(4), rs.getString(5).toLowerCase()
-                );
-                Produktua.produktuak.add(p);
-                Log.d("Produktua", p.toString());
-            }
-            Produktua.categoriasToArray();
-            conn.close();
-        } catch (Exception e) {
-            Log.d("Exception", "run: Failed " + e.getMessage());
-        }
-    }
-    );
-
-    //imprime todos los productos
-//    public void imprimirTodos() {
-//        produktuak = Produktua.produktuak;
-//        produktuakAdapter = new ArrayAdapter<Produktua>(this, android.R.layout.simple_list_item_1, produktuak);
-//        listaProductos.setAdapter(produktuakAdapter);
-//    }
-
-    //imprime los productos por categoria
     public void printByCategory(String categoria) {
-
         ArrayList<Produktua> prods = new ArrayList<>();
         if (categoria.equals("Guztiak")){
             produktuakActual = Produktua.produktuak;
@@ -166,7 +104,6 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
         }
     }
 
-
     @Override
     public boolean onQueryTextSubmit(String s) {
         filtrado(s);
@@ -175,7 +112,6 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
 
     @Override
     public boolean onQueryTextChange(String s) {
-
         filtrado(s);
         return false;
     }

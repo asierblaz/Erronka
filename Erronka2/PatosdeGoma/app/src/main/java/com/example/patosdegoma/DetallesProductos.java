@@ -2,7 +2,6 @@ package com.example.patosdegoma;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.Html;
@@ -10,8 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.example.patosdegoma.OnSwipeTouchListener;
 
 import java.util.ArrayList;
 
@@ -24,6 +21,9 @@ public class DetallesProductos extends AppCompatActivity {
     private View layout;
     private ArrayList<Produktua> prods;
     private Produktua p1;
+    private ImageView addCarrito;
+    private int kant = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,20 +42,18 @@ public class DetallesProductos extends AppCompatActivity {
         textCategoria.setText(p1.getCategoria());
         float precio = (float) p1.getPrezioa();
         textPrecio.setText(String.format("%.2f", precio)+" €");
-
         int imageRes= getResources().getIdentifier("@drawable/nofoto",null, getPackageName());
-            Drawable draw= getResources().getDrawable(imageRes);
-            img.setImageDrawable(draw);
+        Drawable draw= getResources().getDrawable(imageRes);
+        img.setImageDrawable(draw);
 
-            try {
-                img.setImageDrawable(getResources().getDrawable(getResources().getIdentifier("@drawable/" + p1.getImagen(), null, getPackageName())));
+        try {
+            img.setImageDrawable(getResources().getDrawable(getResources().getIdentifier("@drawable/" + p1.getImagen(), null, getPackageName())));
+        } catch (Exception e) {
+            img.setImageDrawable(getResources().getDrawable(getResources().getIdentifier("@drawable/nofoto", null, getPackageName())));
+        }
 
-            } catch (Exception e) {
-                img.setImageDrawable(getResources().getDrawable(getResources().getIdentifier("@drawable/nofoto", null, getPackageName())));
-
-            }
         layout = findViewById(R.id.Layout);
-            layout.setOnTouchListener(new OnSwipeTouchListener(DetallesProductos.this) {
+        layout.setOnTouchListener(new OnSwipeTouchListener(DetallesProductos.this) {
                 Produktua px;
                 int size = prods.size()-1;
                 public void onSwipeLeft() {
@@ -104,5 +102,19 @@ public class DetallesProductos extends AppCompatActivity {
 
             });
 
+        addCarrito = findViewById(R.id.addCarrito);
+        addCarrito.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    kant = Integer.parseInt(((TextView)findViewById(R.id.kantText)).getText().toString());
+                    Log.d("Kant", String.valueOf(kant));
+                }catch (Exception e){
+                    Log.d("KantExc", e.getMessage());
+                }
+                ProductoCarrito pc = new ProductoCarrito(p1,kant);
+                ProductoCarrito.carrito.add(pc);
+            }
+        });
     }
 }

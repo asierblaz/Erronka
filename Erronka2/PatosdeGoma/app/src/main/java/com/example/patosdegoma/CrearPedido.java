@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 
 import java.sql.Connection;
@@ -19,6 +20,9 @@ import java.util.Date;
 
 public class CrearPedido extends AppCompatActivity {
     Spinner BezeroakSpinner;
+    private ListView lineaPedido;
+    private ArrayAdapter<ProductoCarrito> lineaPedidoAdapter = null;
+    public static int id_sol;
 
     int so_id;
     final boolean so_require_signature = true;
@@ -73,9 +77,11 @@ public class CrearPedido extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_pedido);
-        Log.d("Hola", Bezeroa.bezeroak.toString());
         ArrayAdapter<Bezeroa> bezeroak = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Bezeroa.bezeroak);
-        Log.d("Hola2", "onCreate: ");
+        lineaPedido = findViewById(R.id.lineaPedido);
+
+        lineaPedidoAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ProductoCarrito.carrito);
+        lineaPedido.setAdapter(lineaPedidoAdapter);
         ((Spinner)findViewById(R.id.BezeroakSpinner)).setAdapter(bezeroak);
         ((Spinner)findViewById(R.id.BezeroakSpinner)).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
