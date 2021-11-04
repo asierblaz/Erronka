@@ -9,6 +9,7 @@ public class ProductoCarrito {
     Produktua producto;
     int cantidad = 1;
     float precio;
+
     public static ArrayList<ProductoCarrito> carrito = new ArrayList<>();
 
     public ProductoCarrito(Produktua producto) {
