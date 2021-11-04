@@ -25,7 +25,6 @@ public class DataConnect extends Thread {
         try {
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection(url, user, pass);
-            Log.d("Connection", conn.toString());
             return conn;
         } catch (SQLException se) {
             Log.d("SQLException", "oops! No se puede conectar. Error: " + se.toString());
@@ -50,15 +49,23 @@ public class DataConnect extends Thread {
         BezeroakQuery.start();
     }
 
+    public static void SoIdQuery(){
+        SoIdQuery.setPriority(Thread.MAX_PRIORITY);
+        SoIdQuery.start();
+    }
+
     public static void SolIdQuery(){
         SolIdQuery.setPriority(Thread.MAX_PRIORITY);
         SolIdQuery.start();
     }
 
+
     static Thread ProduktuakQuery = new Thread(() ->
     {
         try {
-            String query = "select product_template.id, product_template.name, product_category.complete_name as category, product_template.list_price, product_template.default_code from product_template\n" +
+            String query = "select product_template.id, product_template.name, " +
+                    "product_category.complete_name as category, product_template.list_price, " +
+                    "product_template.default_code from product_template\n" +
                     "inner join product_category on product_template.categ_id =product_category.id \n" +
                     "order by name asc";
             Connection conn = Connect();
@@ -90,7 +97,22 @@ public class DataConnect extends Thread {
                         rs.getInt(1), rs.getString(2)
                 );
                 Bezeroa.bezeroak.add(b);
-                Log.d("Bezeroa", b.toString());
+            }
+            conn.close();
+        } catch (Exception e) {
+            Log.d("Exception", "run: Failed " + e.getMessage());
+        }
+    });
+
+    static Thread SoIdQuery = new Thread(() ->
+    {
+        try {
+            String query = "select MAX(id) from sale_order";
+            Connection conn = Connect();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                CrearPedido.so_id = rs.getInt(1)+1;
             }
             conn.close();
         } catch (Exception e) {
@@ -106,7 +128,7 @@ public class DataConnect extends Thread {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
             while (rs.next()) {
-                CrearPedido.id_sol = rs.getInt(1);
+                CrearPedido.sol_id = rs.getInt(1)+1;
             }
             conn.close();
         } catch (Exception e) {
@@ -132,13 +154,13 @@ public class DataConnect extends Thread {
                         rs.getFloat(10)
                 );
                 Salmenta.salmentak.add(s);
-                //Log.d("Salmenta", s.toString());
             }
             conn.close();
         } catch (Exception e) {
             Log.d("Exception", "run: Failed"+ e.getMessage());
         }
     });
+
 
     public String getUrl() {
         return url;

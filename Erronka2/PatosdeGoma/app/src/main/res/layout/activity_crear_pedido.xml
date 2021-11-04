@@ -38,18 +38,18 @@
         android:layout_width="325dp"
         android:layout_height="387dp"
         android:layout_marginTop="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/CrearPedidoBtn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BezeroakSpinner"
         app:layout_constraintVertical_bias="1.0"></ListView>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/CrearPedidoBtn"
         android:layout_width="321dp"
         android:layout_height="72dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/linea"
+        android:text="@string/Eskaera"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

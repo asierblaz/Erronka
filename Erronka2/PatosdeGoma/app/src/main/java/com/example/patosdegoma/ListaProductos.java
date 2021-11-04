@@ -14,6 +14,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 
@@ -42,8 +46,6 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
 
         listaProductos = findViewById(R.id.listProductos);
         catSpinner = findViewById(R.id.catSpinner);
-        Thread.currentThread().setPriority(1);
-        DataConnect.ProduktuakQuery();
 
         produktuakAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, produktuak);
         listaProductos.setAdapter(produktuakAdapter);
@@ -134,6 +136,5 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
             listaProductos.setAdapter(produktuakAdapter);
         }
     }
-
 
 }

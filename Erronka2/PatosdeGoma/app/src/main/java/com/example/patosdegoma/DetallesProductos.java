@@ -112,9 +112,25 @@ public class DetallesProductos extends AppCompatActivity {
                 }catch (Exception e){
                     Log.d("KantExc", e.getMessage());
                 }
-                ProductoCarrito pc = new ProductoCarrito(p1,kant);
-                ProductoCarrito.carrito.add(pc);
+                addToCart(p1, kant);
             }
         });
+    }
+
+
+    public static void addToCart(Produktua prod, int kant){
+        boolean esta = false;
+        for (ProductoCarrito p: ProductoCarrito.carrito) {
+            if (p.getProducto().getId() == prod.getId()){
+                esta = true;
+                p.setCantidad(kant);
+                p.setPrecio();
+                break;
+            }
+        }
+        if (!esta){
+            ProductoCarrito pc = new ProductoCarrito(prod, kant);
+            ProductoCarrito.carrito.add(pc);
+        }
     }
 }

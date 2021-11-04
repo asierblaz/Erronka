@@ -1,5 +1,8 @@
 package com.example.patosdegoma;
 
+import android.util.Log;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
 public class ProductoCarrito {
@@ -38,12 +41,12 @@ public class ProductoCarrito {
         return precio;
     }
 
-    public void setPrecio(float precio) {
-        this.precio = precio;
+    public void setPrecio() {
+        this.precio = this.producto.getPrezioa()*cantidad;
     }
 
     @Override
     public String toString() {
-        return producto +" x" + cantidad;
+        return producto + "x" + cantidad + " " + String.format("%.2f", precio) + " €";
     }
 }

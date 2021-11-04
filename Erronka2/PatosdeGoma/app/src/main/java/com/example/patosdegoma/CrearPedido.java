@@ -1,115 +1,140 @@
 package com.example.patosdegoma;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.text.format.Time;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
+import java.text.DecimalFormat;
+import java.util.concurrent.Semaphore;
 
 public class CrearPedido extends AppCompatActivity {
-    Spinner BezeroakSpinner;
-    private ListView lineaPedido;
-    private ArrayAdapter<ProductoCarrito> lineaPedidoAdapter = null;
-    public static int id_sol;
+    private final Semaphore pedido = new Semaphore(1, true);
 
-    int so_id;
-    final boolean so_require_signature = true;
-    final boolean so_require_payment = false;
+    public static int sol_id;
+    public static int so_id;
+    public static String so_name;
     int partner_id;
-    int so_partner_invoice_id;
-    int so_partner_shipping_id;
-    final int so_pricelist_id = 1;
-    final int currency_id = 1;
-    String so_name;
-    final String state = "draft";
-    Time date_order = new Time();
-    Time create_date = new Time();
-    final String invoice_status = "no";
-    float so_amount_untaxed;
-    final int so_amount_tax = 0;
-    float so_amount_total;
-    final int currency_rate = 1;
-    final int company_id = 1;
-    final int team_id = 1;
-    final int create_uid = 2;
-    final int write_uid = 2;
-    Time write_date = new Time();
-    final String so_picking_policy = "direct";
-    final int so_warehouse_id = 1;
+    float so_amount = 0;
+    DecimalFormat f = new DecimalFormat("##.00");
 
-    int sol_id;
-    String sol_name;
-    final int sol_sequence = 10;
-    float sol_price_unit;
-    float sol_price_subtotal;
-    float sol_price_total;
-    float sol_price_reduce;
-    float sol_price_reduce_taxinc;
-    float sol_price_reduce_taxexcl;
-    final int sol_discount = 0;
-    int sol_product_id;
-    final int sol_product_uom = 1;
-    int sol_product_uom_qty;
-    final String sol_qty_delivered_method = "stock_move";
-    final int sol_qty_delivered = 0;
-    final int sol_qty_delivered_manual = 0;
-    final int sol_qty_to_invoice = 0;
-    final int sol_qty_invoiced = 0;
-    final int sol_untaxed_amount_invoiced = 0;
-    float sol_untaxed_amount_to_invoice;
-    final int sol_customer_lead = 0;
+    Button CrearPedidoBtn;
+    Spinner BezeroakSpinner;
 
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_crear_pedido);
-        ArrayAdapter<Bezeroa> bezeroak = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Bezeroa.bezeroak);
-        lineaPedido = findViewById(R.id.lineaPedido);
-
-        lineaPedidoAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ProductoCarrito.carrito);
-        lineaPedido.setAdapter(lineaPedidoAdapter);
-        ((Spinner)findViewById(R.id.BezeroakSpinner)).setAdapter(bezeroak);
-        ((Spinner)findViewById(R.id.BezeroakSpinner)).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                partner_id=Bezeroa.bezeroak.get(i).getId();
-                so_partner_invoice_id = partner_id;
-                so_partner_shipping_id = partner_id;
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
+    Thread SoIdQuery = new Thread(() ->
+    {
+        try {
+            String query = "select MAX(id) from sale_order";
+            Connection conn = Connect();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                CrearPedido.so_id = rs.getInt(1) + 1;
+                Log.d("soq_id", String.valueOf(so_id));
+                CrearPedido.so_name = "S000" + so_id;
 
             }
-        });
-        //so_id = ((int) getIntent().getSerializableExtra("iDpedido"))+1;
-        Log.d("ID", String.valueOf(so_id));
-        Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
-        InsertQuery.setPriority(Thread.MAX_PRIORITY);
+            conn.close();
+        } catch (Exception e) {
+            Log.d("Exception", "run: Failed " + e.getMessage());
+        }
+    });
 
-    }
+    Thread SolIdQuery = new Thread(() ->
+    {
+        try {
+            String query = "select MAX(id) from sale_order_line";
+            Connection conn = Connect();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                CrearPedido.sol_id = rs.getInt(1) + 1;
+                Log.d("solq_id", String.valueOf(sol_id));
+            }
+            conn.close();
+        } catch (Exception e) {
+            Log.d("Exception", "run: Failed " + e.getMessage());
+        }
+    });
 
-    public Connection Connect() {
-        String url = "jdbc:postgresql://192.168.65.15:5432/PatitosdeGoma";
-        String user = "openpg";
-        String pass = "openpgpwd";
+    Thread InsertOrderQuery = new Thread(() ->
+    {
+        String query = "insert into sale_order(id, require_signature, require_payment, partner_id," +
+                "partner_invoice_id, partner_shipping_id, pricelist_id, currency_id," +
+                "name, state, date_order, create_date, invoice_status," +
+                "amount_untaxed, amount_tax, amount_total, currency_rate, company_id, team_id, " +
+                "create_uid, write_uid, write_date, picking_policy, warehouse_id)" +
+                "values (" + so_id + ", true, false, " + partner_id + ", " + partner_id + ", " +
+                partner_id + ", 1 , 1, '" + so_name + "','draft', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, " +
+                "'no', " + so_amount + ", 0, " + so_amount + ", 1, 1, 1, 2, 2, " +
+                "CURRENT_TIMESTAMP, 'direct', 1)";
+
+        try {
+            pedido.acquire();
+            try {
+                Log.d("SO_Query", query);
+                Connection conn = Connect();
+                Statement st = conn.createStatement();
+                st.executeUpdate(query);
+                conn.close();
+            } finally {
+                pedido.release();
+            }
+        } catch (Exception e) {
+            Log.d("SO_q", "run: Failed; " + e.getMessage());
+        }
+    });
+
+    Thread InsertLineQuery = new Thread(() ->
+    {
+        try {
+            pedido.acquire();
+            try {
+                Log.d("1", "1");
+                Connection conn = Connect();
+                Log.d("2", "2");
+                for (ProductoCarrito p : ProductoCarrito.carrito) {
+                    String query = "insert into sale_order_line(id, order_id, name, sequence, invoice_status, " +
+                            "price_unit, price_tax, price_subtotal, price_total, price_reduce, price_reduce_taxinc, " +
+                            "price_reduce_taxexcl, discount, product_id, product_uom, product_uom_qty, " +
+                            "qty_delivered_method, qty_delivered, qty_delivered_manual, qty_to_invoice, " +
+                            "qty_invoiced,untaxed_amount_invoiced, untaxed_amount_to_invoice, currency_id, " +
+                            "company_id, order_partner_id, state, customer_lead, create_uid, create_date, " +
+                            "write_uid, write_date)" +
+                            "values( " + sol_id + ", " + so_id + ", '" + p.getProducto().getName() +
+                            "' , 10, 'no', " + p.getProducto().getPrezioa() + ", 0, " + p.getPrecio() +
+                            ", " + p.getPrecio() + ", " + p.getPrecio() + ", " + p.getPrecio() +
+                            ", " + p.getPrecio() + ", 0, " + p.getProducto().getId() + ", 1, " +
+                            p.getCantidad() + ", 'stock_move', 0, 0, 0, 0, 0, " + p.getPrecio() +
+                            ", 1, 1, " + partner_id + ", 'draft', 0, 2, CURRENT_TIMESTAMP, 2, " +
+                            "CURRENT_TIMESTAMP)";
+                    Log.d("SOL_Query", query);
+                    Statement st = conn.createStatement();
+                    st.executeUpdate(query);
+                    sol_id -= -1;
+                }
+            } finally {
+                pedido.release();
+            }
+        } catch (Exception e) {
+            Log.d("SOL_q", "run: Failed; " + e.getMessage());
+        }
+
+    });
+
+    public static Connection Connect() {
         try {
             Class.forName("org.postgresql.Driver");
-            Connection conn = DriverManager.getConnection(url, user, pass);
+            Connection conn = DriverManager.getConnection(DataConnect.url, DataConnect.user, DataConnect.pass);
             Log.d("Connection", conn.toString());
             return conn;
         } catch (SQLException se) {
@@ -120,45 +145,54 @@ public class CrearPedido extends AppCompatActivity {
         return null;
     }
 
-    Thread InsertQuery = new Thread(() ->
-    {
-        String so = "insert into sale_order(id, require_signature, require_payment, partner_id," +
-                "partner_invoice_id, partner_shipping_id, pricelist_id, currency_id," +
-                "name, state, date_order, create_date, invoice_status," +
-                "amount_untaxed, amount_tax, amount_total, currency_rate, company_id, team_id, " +
-                "create_uid, write_uid, write_date, picking_policy, warehouse_id)" +
-                "values (" + so_id + ", " + so_require_signature + ", " + so_require_payment + ", " +
-                partner_id + ", " + so_partner_invoice_id + ", " + so_partner_shipping_id + ", " +
-                so_pricelist_id + ", " + currency_id + ", " + so_name + "," + state + ", " +
-                date_order + ", " + create_date + ", " + invoice_status + ", " + so_amount_untaxed +
-                ", " + so_amount_tax + ", " + so_amount_total + ", " + currency_rate + ", " +
-                company_id + ", " + team_id + ", " + create_uid + ", " + write_uid + ", " + write_date +
-                ", " +  so_picking_policy + ", " + so_warehouse_id + ")";
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_crear_pedido);
 
-        String sol = "insert into sale_order_line(id, order_id, name, sequence, invoice_status, " +
-                "price_unit,price_subtotal, price_total, price_reduce, price_reduce_taxinc, " +
-                "price_reduce_taxexcl, discount, product_id, product_uom, product_uom_qty, " +
-                "qty_delivered_method, qty_delivered, qty_delivered_manual, qty_to_invoice, " +
-                "qty_invoiced,untaxed_amount_invoiced, untaxed_amount_to_invoice, currency_id, " +
-                "company_id, order_partner_id, state, customer_lead, create_uid, create_date, " +
-                "write_uid, write_date)"+
-                "values( " + sol_id + ", " + so_id + ", " + sol_name + " , " + sol_sequence + ", " +
-                invoice_status + ", " + sol_price_unit + ", " + sol_price_subtotal + ", " +
-                sol_price_total + ", " + sol_price_reduce + ", " + sol_price_reduce_taxinc + ", " +
-                sol_price_reduce_taxexcl + ", " + sol_discount + ", " + sol_product_id + ", " +
-                sol_product_uom + ", " + sol_product_uom_qty + ", " + sol_qty_delivered_method + ", " +
-                sol_qty_delivered + ", " + sol_qty_delivered_manual + ", " + sol_qty_to_invoice + ", " +
-                sol_qty_invoiced + ", " + sol_untaxed_amount_invoiced + ", " +
-                sol_untaxed_amount_to_invoice + ", " + currency_id + ", " + company_id + ", " +
-                partner_id + ", " + state + ", " + sol_customer_lead + ", " + create_uid + ", " +
-                create_date + ", " + write_uid + ", " + write_date + ")";
-        try {
-            Connection conn = Connect();
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(so);
-            conn.close();
-        } catch (Exception e) {
-            Log.d("TAG", "run: Failed"+ e.getMessage());
+        ArrayAdapter<Bezeroa> bezeroak = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Bezeroa.bezeroak);
+        ListView lineaPedido = findViewById(R.id.lineaPedido);
+
+        ArrayAdapter<ProductoCarrito> lineaPedidoAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ProductoCarrito.carrito);
+        lineaPedido.setAdapter(lineaPedidoAdapter);
+        ((Spinner) findViewById(R.id.BezeroakSpinner)).setAdapter(bezeroak);
+        ((Spinner) findViewById(R.id.BezeroakSpinner)).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                partner_id = Bezeroa.bezeroak.get(i).getId();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+                partner_id = Bezeroa.bezeroak.get(0).getId();
+            }
+        });
+
+        for (ProductoCarrito p : ProductoCarrito.carrito) {
+            so_amount += p.getPrecio();
         }
-    });
+        so_amount = Float.parseFloat(f.format(so_amount));
+
+        Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
+        SoIdQuery.setPriority(10);
+        SoIdQuery.start();
+        SolIdQuery.setPriority(10);
+        SolIdQuery.start();
+        InsertOrderQuery.setPriority(10);
+        InsertLineQuery.setPriority(2);
+        CrearPedidoBtn = findViewById(R.id.CrearPedidoBtn);
+        CrearPedidoBtn.setOnClickListener(view -> {
+            InsertOrderQuery.start();
+            InsertLineQuery.start();
+        });
+
+    }
+
+    private float getTotal() {
+        float total = 0;
+        for (ProductoCarrito p : ProductoCarrito.carrito) {
+            total += p.getPrecio();
+        }
+        return total;
+    }
 }

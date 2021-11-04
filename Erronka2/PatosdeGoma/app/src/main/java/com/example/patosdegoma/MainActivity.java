@@ -1,6 +1,7 @@
 package com.example.patosdegoma;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private Button verListaProductosBtn;
     private Button verListaVentasBtn;
     private MenuItem aboutUs;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,12 +36,18 @@ public class MainActivity extends AppCompatActivity {
         verListaProductosBtn.setOnClickListener(this::goToListaProductos);
         verListaVentasBtn.setOnClickListener(this::goToListaVentas);
         Produktua.categorias.add("Guztiak");
+
         DataConnect.BezeroakQuery();
+        DataConnect.ProduktuakQuery();
+        DataConnect.SalmentakQuery();
         DataConnect.SolIdQuery();
+
+
     }
-// funcion para crear el menu
+
+    // funcion para crear el menu
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menuprincipal,menu);
+        getMenuInflater().inflate(R.menu.menuprincipal, menu);
         aboutUs = menu.findItem(R.id.app_bar_search);
         return true;
     }
@@ -65,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, ListaProductos.class);
         startActivity(intent);
     }
+
     public void goToListaVentas(View view) {
         Intent intent = new Intent(this, ListaVentas.class);
         startActivity(intent);

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.text.Html;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,7 +23,6 @@ public class ListaVentas extends AppCompatActivity {
         setContentView(R.layout.activity_lista_ventas);
 
         Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
-        DataConnect.SalmentakQuery();
 
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
