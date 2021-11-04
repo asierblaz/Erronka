@@ -124,6 +124,7 @@ public class CrearPedido extends AppCompatActivity {
                 }
             } finally {
                 pedido.release();
+                ProductoCarrito.carrito.clear();
             }
         } catch (Exception e) {
             Log.d("SOL_q", "run: Failed; " + e.getMessage());
