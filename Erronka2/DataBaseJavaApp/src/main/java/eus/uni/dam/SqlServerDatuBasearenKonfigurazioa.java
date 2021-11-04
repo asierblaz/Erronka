@@ -94,7 +94,7 @@ public class SqlServerDatuBasearenKonfigurazioa {
 
     
   @Bean
-    public SqlServerDao setSqlServerDao() {
+    public SqlServerDao getSqlServerDao() {
     	return new SqlServerDao();
     }  
 

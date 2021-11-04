@@ -35,7 +35,6 @@ public class ControllerSqlServer {
 	public void bezeroakToDB(List<ResPartner> bezeroak) {
 
 		for (ResPartner b : bezeroak) {
-
 			String herrialdea = "";
 			if (b.getResCountry() == null) {
 				herrialdea = "Ezezaguna";
@@ -63,6 +62,7 @@ public class ControllerSqlServer {
 			Erosketa e1 = new Erosketa(e.getId(), e.getCreateDate(), fakturatua, e.getProductUomQty().intValue(),
 					e.getOrderId(), e.getPriceTotal().floatValue());
 
+			
 			e1.setProduktua(sqlServerDao.getProduktuaById(e.getProductId()));
 			e1.setBezeroa(sqlServerDao.getBezeroaById(e.getResPartner().getId()));
 			sqlServerDao.updateErosketa(e1);

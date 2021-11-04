@@ -67,6 +67,7 @@ public class ControllerXML {
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
 		Document doc = documentBuilder.parse(fitxategia);
+		
 		Element document = doc.getDocumentElement();
 		Node log = document.getLastChild();
 
