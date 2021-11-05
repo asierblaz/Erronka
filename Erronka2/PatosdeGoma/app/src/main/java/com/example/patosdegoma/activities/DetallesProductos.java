@@ -1,4 +1,4 @@
-package com.example.patosdegoma;
+package com.example.patosdegoma.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,6 +14,11 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.patosdegoma.R;
+import com.example.patosdegoma.clases.OnSwipeTouchListener;
+import com.example.patosdegoma.clases.ProductoCarrito;
+import com.example.patosdegoma.clases.Produktua;
 
 import java.util.ArrayList;
 

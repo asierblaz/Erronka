@@ -7,7 +7,7 @@
     android:background="@drawable/fondo"
     android:scrollbarAlwaysDrawHorizontalTrack="false"
     android:scrollbarAlwaysDrawVerticalTrack="true"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
 
     <Button

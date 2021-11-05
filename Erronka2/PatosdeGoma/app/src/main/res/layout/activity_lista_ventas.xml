@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/bglista1"
     android:orientation="vertical"
-    tools:context=".ListaVentas">
+    tools:context=".activities.ListaVentas">
 
     <TextView
         android:id="@+id/textViewSalmentak"

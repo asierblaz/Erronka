@@ -12,22 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PatosdeGoma">
         <activity
-            android:name=".CrearPedido"
+            android:name=".activities.CrearPedido"
             android:exported="true" />
         <activity
-            android:name=".AboutUsActivity"
+            android:name=".activities.AboutUsActivity"
             android:exported="true" />
         <activity
-            android:name=".ListaVentas"
+            android:name=".activities.ListaVentas"
             android:exported="true" />
         <activity
-            android:name=".DetallesProductos"
+            android:name=".activities.DetallesProductos"
             android:exported="true" />
         <activity
-            android:name=".ListaProductos"
+            android:name=".activities.ListaProductos"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

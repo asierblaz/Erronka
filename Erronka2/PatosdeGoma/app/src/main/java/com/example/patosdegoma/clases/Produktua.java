@@ -1,12 +1,6 @@
-package com.example.patosdegoma;
-
-import android.content.Context;
-import android.content.res.AssetFileDescriptor;
-import android.content.res.Resources;
-import android.view.View;
+package com.example.patosdegoma.clases;
 
 import java.io.*;
-import java.nio.charset.Charset;
 import java.util.ArrayList;
 
 public class Produktua implements Serializable {

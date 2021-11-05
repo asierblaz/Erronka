@@ -6,13 +6,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import android.os.Bundle;
-import android.app.Activity;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ListView;
+
+import com.example.patosdegoma.activities.CrearPedido;
+import com.example.patosdegoma.clases.Bezeroa;
+import com.example.patosdegoma.clases.Produktua;
+import com.example.patosdegoma.clases.Salmenta;
 
 public class DataConnect extends Thread {
 

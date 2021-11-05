@@ -1,11 +1,10 @@
-package com.example.patosdegoma;
+package com.example.patosdegoma.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -15,9 +14,9 @@ import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.Spinner;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import com.example.patosdegoma.R;
+import com.example.patosdegoma.clases.Produktua;
+
 import java.util.ArrayList;
 
 

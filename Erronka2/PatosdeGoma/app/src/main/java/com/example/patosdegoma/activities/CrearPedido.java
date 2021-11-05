@@ -1,9 +1,7 @@
-package com.example.patosdegoma;
+package com.example.patosdegoma.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
@@ -15,6 +13,12 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.patosdegoma.DataConnect;
+import com.example.patosdegoma.R;
+import com.example.patosdegoma.clases.Bezeroa;
+import com.example.patosdegoma.clases.ProductoCarrito;
+import com.example.patosdegoma.clases.Salmenta;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -23,20 +27,50 @@ import java.sql.Statement;
 import java.text.DecimalFormat;
 import java.util.concurrent.Semaphore;
 
+/**
+ * Activity Crear Pedido
+ **/
 public class CrearPedido extends AppCompatActivity {
-    public static int sol_id;
+    /*
+      Variables para las queries
+      so_id => sale_order.id (ID de pedido de ventas)
+      sol_id => sale_order_line.id (ID de linea de pedido de ventas)
+      so_name => sale_order.name (Formato S000+id)
+      partner_id => res_partner.id (ID de cliente)
+      so_amount => sale_order.amount_total (se usa paradefinir el total del pedido)
+     */
     public static int so_id;
+    public static int sol_id;
     public static String so_name;
-    private final Semaphore pedido = new Semaphore(1, true);
-    public ArrayAdapter<ProductoCarrito> lineaPedidoAdapter;
-    public ListView lineaPedido;
     int partner_id;
     float so_amount = 0;
+
+    /*
+      Semáforo para que la inserción de lineas de pedido
+      no se haga antes de que la inserción del pedido termine
+     */
+    private final Semaphore pedido = new Semaphore(1, true);
+
+    /*
+      Variables para mostrar las lineas del pedido actual
+      lineaPedidoAdapter => ArrayAdapter que recoge los objetos del carrito
+      lineaPedido => ListView en el que se muestan las lineas de pedido
+     */
+    public ArrayAdapter<ProductoCarrito> lineaPedidoAdapter;
+    public ListView lineaPedido;
+
+    //objeto que se usará para formatear los datos de tipo Float
     DecimalFormat f = new DecimalFormat("##.00");
 
+    /*
+      Variables relacionadas con objetos del layout
+      CrearPedidoBtn => Botón que lanza los métodos necesarios para meter los datos en PostgreSQL
+      BezeroakSpinner => Spinner en el que se mostrarán los clientes
+     */
     Button CrearPedidoBtn;
     Spinner BezeroakSpinner;
 
+    //Thread que recoge el último ID de pedido
     Thread SoIdQuery = new Thread(() ->
     {
         try {
@@ -47,7 +81,6 @@ public class CrearPedido extends AppCompatActivity {
             while (rs.next()) {
                 CrearPedido.so_id = rs.getInt(1) + 1;
                 CrearPedido.so_name = "S000" + so_id;
-
             }
             conn.close();
         } catch (Exception e) {
@@ -55,6 +88,7 @@ public class CrearPedido extends AppCompatActivity {
         }
     });
 
+    //Thread que recoge el último ID de linea pedido
     Thread SolIdQuery = new Thread(() ->
     {
         try {
@@ -71,6 +105,7 @@ public class CrearPedido extends AppCompatActivity {
         }
     });
 
+    //Thread que inserta un pedido
     Thread InsertOrderQuery = new Thread(() ->
     {
         String query = "insert into sale_order(id, require_signature, require_payment, partner_id," +
@@ -99,6 +134,7 @@ public class CrearPedido extends AppCompatActivity {
         }
     });
 
+    //Thread que inserta las lineas de pedido
     Thread InsertLineQuery = new Thread(() ->
     {
         try {
@@ -135,30 +171,8 @@ public class CrearPedido extends AppCompatActivity {
         }
 
     });
-    Thread SalmentakQuery = new Thread(() ->
-    {
-        try {
-            String query = "Select id, name, state, date_order, create_date, partner_id, " +
-                    "invoice_status, amount_untaxed, amount_tax, amount_total from sale_order " +
-                    "order by name desc";
-            Connection conn = Connect();
-            Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            while (rs.next()) {
-                Salmenta s = new Salmenta(
-                        rs.getInt(1), rs.getString(2), rs.getString(3),
-                        rs.getString(4), rs.getString(5),
-                        rs.getInt(6), rs.getString(7),
-                        rs.getFloat(8), rs.getFloat(9),
-                        rs.getFloat(10)
-                );
-                Salmenta.salmentak.add(s);
-            }
-            conn.close();
-        } catch (Exception e) {
-            Log.d("Exception", "run: Failed"+ e.getMessage());
-        }
-    });
+
+    //Método para la conexión a la base de datos
     public static Connection Connect() {
         try {
             Class.forName("org.postgresql.Driver");
@@ -177,7 +191,7 @@ public class CrearPedido extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_pedido);
 
-        /**Icono y color del texto del menu**/
+        //Icono y color del texto del menu
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Patinhos Gomosos</font>"));
@@ -238,8 +252,8 @@ public class CrearPedido extends AppCompatActivity {
         return total;
     }
 
-    private void goBack(){
-        Toast.makeText(getApplicationContext(),"Salmenta sortu da",Toast.LENGTH_SHORT).show();
+    private void goBack() {
+        Toast.makeText(getApplicationContext(), "Salmenta sortu da", Toast.LENGTH_SHORT).show();
         this.finish();
     }
 }

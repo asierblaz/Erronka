@@ -1,7 +1,4 @@
-package com.example.patosdegoma;
-
-import android.util.Log;
-import android.widget.TextView;
+package com.example.patosdegoma.clases;
 
 import java.util.ArrayList;
 

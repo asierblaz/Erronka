@@ -1,10 +1,15 @@
-package com.example.patosdegoma;
+package com.example.patosdegoma.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
 import android.text.Html;
 
-/** Clase About Us**/
+import com.example.patosdegoma.R;
+
+/**
+ * Activity About Us
+ **/
 public class AboutUsActivity extends AppCompatActivity {
 
     @Override

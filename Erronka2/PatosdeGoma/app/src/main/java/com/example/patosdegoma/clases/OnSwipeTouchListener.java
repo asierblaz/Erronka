@@ -1,4 +1,4 @@
-package com.example.patosdegoma;
+package com.example.patosdegoma.clases;
 
 import android.content.Context;
 import android.view.GestureDetector;
