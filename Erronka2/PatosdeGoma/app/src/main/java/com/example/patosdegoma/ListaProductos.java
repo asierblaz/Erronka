@@ -21,7 +21,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 
-public class ListaProductos extends AppCompatActivity implements SearchView.OnQueryTextListener {
+public class ListaProductos extends AppCompatActivity {
 
     private Spinner catSpinner;
     private ListView listaProductos;
@@ -40,9 +40,10 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_productos);
 
+        /**Icono y color del texto del menu**/
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Patinhos Gomosos </font>"));
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Patinhos Gomosos</font>"));
 
         listaProductos = findViewById(R.id.listProductos);
         catSpinner = findViewById(R.id.catSpinner);
@@ -64,16 +65,7 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
             }
         });
 
-        listaProductos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
-                Produktua p1 = produktuakActual.get(position);
-                Intent intent = new Intent(ListaProductos.this, DetallesProductos.class);
-                intent.putExtra("prod", p1);
-                intent.putExtra("array", produktuakActual);
-                startActivity(intent);
-            }
-        });
+        listaProductos.setOnItemClickListener(this::productoClick);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -82,7 +74,19 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
         search = (SearchView) menuItem.getActionView();
 
         search.setQueryHint("");
-        search.setOnQueryTextListener(this);
+        search.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                filtrado(s);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                filtrado(s);
+                return false;
+            }
+        });
         return true;
     }
 
@@ -106,17 +110,6 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
         }
     }
 
-    @Override
-    public boolean onQueryTextSubmit(String s) {
-        filtrado(s);
-        return false;
-    }
-
-    @Override
-    public boolean onQueryTextChange(String s) {
-        filtrado(s);
-        return false;
-    }
 
     public void filtrado(String name) {
         ArrayList<Produktua> prods = new ArrayList<>();
@@ -135,6 +128,14 @@ public class ListaProductos extends AppCompatActivity implements SearchView.OnQu
             produktuakAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, produktuak);
             listaProductos.setAdapter(produktuakAdapter);
         }
+    }
+
+    public void productoClick(AdapterView<?> adapterView, View view, int position, long id) {
+        Produktua p1 = produktuakActual.get(position);
+        Intent intent = new Intent(ListaProductos.this, DetallesProductos.class);
+        intent.putExtra("prod", p1);
+        intent.putExtra("array", produktuakActual);
+        startActivity(intent);
     }
 
 }

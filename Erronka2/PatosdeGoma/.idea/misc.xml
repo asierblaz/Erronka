@@ -5,11 +5,13 @@
       <map>
         <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/drawable/add_carrito_48.xml" value="0.22135416666666666" />
         <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/drawable/bg.xml" value="0.20625" />
+        <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/drawable/bgmodal.xml" value="0.20625" />
         <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2171875" />
         <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/drawable/overbox.xml" value="0.20625" />
         <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/drawable/plus.xml" value="0.2171875" />
+        <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/layout/activity_about_us.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/layout/activity_crear_pedido.xml" value="0.33" />
-        <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/layout/activity_detalles_productos.xml" value="0.25" />
+        <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/layout/activity_detalles_productos.xml" value="0.33" />
         <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/layout/activity_lista_productos.xml" value="0.17831813576494426" />
         <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/layout/activity_lista_ventas.xml" value="0.1838768115942029" />
         <entry key="..\:/Users/mantecon.julen/Documents/Erronka/Erronka2/PatosdeGoma/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />

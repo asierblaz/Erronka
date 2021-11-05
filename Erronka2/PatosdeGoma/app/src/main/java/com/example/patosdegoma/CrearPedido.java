@@ -1,7 +1,11 @@
 package com.example.patosdegoma;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -9,6 +13,8 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -18,11 +24,12 @@ import java.text.DecimalFormat;
 import java.util.concurrent.Semaphore;
 
 public class CrearPedido extends AppCompatActivity {
-    private final Semaphore pedido = new Semaphore(1, true);
-
     public static int sol_id;
     public static int so_id;
     public static String so_name;
+    private final Semaphore pedido = new Semaphore(1, true);
+    public ArrayAdapter<ProductoCarrito> lineaPedidoAdapter;
+    public ListView lineaPedido;
     int partner_id;
     float so_amount = 0;
     DecimalFormat f = new DecimalFormat("##.00");
@@ -39,13 +46,12 @@ public class CrearPedido extends AppCompatActivity {
             ResultSet rs = st.executeQuery(query);
             while (rs.next()) {
                 CrearPedido.so_id = rs.getInt(1) + 1;
-                Log.d("soq_id", String.valueOf(so_id));
                 CrearPedido.so_name = "S000" + so_id;
 
             }
             conn.close();
         } catch (Exception e) {
-            Log.d("Exception", "run: Failed " + e.getMessage());
+            e.printStackTrace();
         }
     });
 
@@ -58,11 +64,10 @@ public class CrearPedido extends AppCompatActivity {
             ResultSet rs = st.executeQuery(query);
             while (rs.next()) {
                 CrearPedido.sol_id = rs.getInt(1) + 1;
-                Log.d("solq_id", String.valueOf(sol_id));
             }
             conn.close();
         } catch (Exception e) {
-            Log.d("Exception", "run: Failed " + e.getMessage());
+            e.printStackTrace();
         }
     });
 
@@ -90,7 +95,7 @@ public class CrearPedido extends AppCompatActivity {
                 pedido.release();
             }
         } catch (Exception e) {
-            Log.d("SO_q", "run: Failed; " + e.getMessage());
+            Log.d("InsertOrderQuery", e.getMessage());
         }
     });
 
@@ -99,9 +104,7 @@ public class CrearPedido extends AppCompatActivity {
         try {
             pedido.acquire();
             try {
-                Log.d("1", "1");
                 Connection conn = Connect();
-                Log.d("2", "2");
                 for (ProductoCarrito p : ProductoCarrito.carrito) {
                     String query = "insert into sale_order_line(id, order_id, name, sequence, invoice_status, " +
                             "price_unit, price_tax, price_subtotal, price_total, price_reduce, price_reduce_taxinc, " +
@@ -127,16 +130,39 @@ public class CrearPedido extends AppCompatActivity {
                 ProductoCarrito.carrito.clear();
             }
         } catch (Exception e) {
-            Log.d("SOL_q", "run: Failed; " + e.getMessage());
+            Log.d("InsertLineQuery", e.getMessage());
+            e.printStackTrace();
         }
 
     });
-
+    Thread SalmentakQuery = new Thread(() ->
+    {
+        try {
+            String query = "Select id, name, state, date_order, create_date, partner_id, " +
+                    "invoice_status, amount_untaxed, amount_tax, amount_total from sale_order " +
+                    "order by name desc";
+            Connection conn = Connect();
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next()) {
+                Salmenta s = new Salmenta(
+                        rs.getInt(1), rs.getString(2), rs.getString(3),
+                        rs.getString(4), rs.getString(5),
+                        rs.getInt(6), rs.getString(7),
+                        rs.getFloat(8), rs.getFloat(9),
+                        rs.getFloat(10)
+                );
+                Salmenta.salmentak.add(s);
+            }
+            conn.close();
+        } catch (Exception e) {
+            Log.d("Exception", "run: Failed"+ e.getMessage());
+        }
+    });
     public static Connection Connect() {
         try {
             Class.forName("org.postgresql.Driver");
             Connection conn = DriverManager.getConnection(DataConnect.url, DataConnect.user, DataConnect.pass);
-            Log.d("Connection", conn.toString());
             return conn;
         } catch (SQLException se) {
             Log.d("SQLException", "oops! No se puede conectar. Error: " + se.toString());
@@ -151,11 +177,17 @@ public class CrearPedido extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_pedido);
 
-        ArrayAdapter<Bezeroa> bezeroak = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Bezeroa.bezeroak);
-        ListView lineaPedido = findViewById(R.id.lineaPedido);
+        /**Icono y color del texto del menu**/
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Patinhos Gomosos</font>"));
 
-        ArrayAdapter<ProductoCarrito> lineaPedidoAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ProductoCarrito.carrito);
+        ArrayAdapter<Bezeroa> bezeroak = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Bezeroa.bezeroak);
+        lineaPedido = findViewById(R.id.lineaPedido);
+
+        lineaPedidoAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, ProductoCarrito.carrito);
         lineaPedido.setAdapter(lineaPedidoAdapter);
+
         ((Spinner) findViewById(R.id.BezeroakSpinner)).setAdapter(bezeroak);
         ((Spinner) findViewById(R.id.BezeroakSpinner)).setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -180,11 +212,20 @@ public class CrearPedido extends AppCompatActivity {
         SolIdQuery.setPriority(10);
         SolIdQuery.start();
         InsertOrderQuery.setPriority(10);
-        InsertLineQuery.setPriority(2);
+        InsertLineQuery.setPriority(5);
         CrearPedidoBtn = findViewById(R.id.CrearPedidoBtn);
-        CrearPedidoBtn.setOnClickListener(view -> {
-            InsertOrderQuery.start();
-            InsertLineQuery.start();
+        CrearPedidoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                InsertOrderQuery.start();
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                InsertLineQuery.start();
+                goBack();
+            }
         });
 
     }
@@ -195,5 +236,10 @@ public class CrearPedido extends AppCompatActivity {
             total += p.getPrecio();
         }
         return total;
+    }
+
+    private void goBack(){
+        Toast.makeText(getApplicationContext(),"Salmenta sortu da",Toast.LENGTH_SHORT).show();
+        this.finish();
     }
 }

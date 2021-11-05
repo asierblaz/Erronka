@@ -36,27 +36,37 @@ public class DataConnect extends Thread {
 
     public static void SalmentakQuery(){
         SalmentakQuery.setPriority(Thread.MAX_PRIORITY);
-        SalmentakQuery.start();
+        if (!SalmentakQuery.isAlive()){
+            SalmentakQuery.start();
+        }
     }
 
     public static void ProduktuakQuery(){
         ProduktuakQuery.setPriority(Thread.MAX_PRIORITY);
-        ProduktuakQuery.start();
+        if (!ProduktuakQuery.isAlive()){
+            ProduktuakQuery.start();
+        }
     }
 
     public static void BezeroakQuery(){
         BezeroakQuery.setPriority(Thread.MAX_PRIORITY);
-        BezeroakQuery.start();
+        if (!BezeroakQuery.isAlive()){
+            BezeroakQuery.start();
+        }
     }
 
     public static void SoIdQuery(){
         SoIdQuery.setPriority(Thread.MAX_PRIORITY);
-        SoIdQuery.start();
+        if (!SoIdQuery.isAlive()){
+            SoIdQuery.start();
+        }
     }
 
     public static void SolIdQuery(){
         SolIdQuery.setPriority(Thread.MAX_PRIORITY);
-        SolIdQuery.start();
+        if (!SolIdQuery.isAlive()){
+            SolIdQuery.start();
+        }
     }
 
 

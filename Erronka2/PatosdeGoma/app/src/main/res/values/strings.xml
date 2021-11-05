@@ -1,10 +1,42 @@
 <resources>
     <string name="app_name">Patinhos Gomosos</string>
     <string name="title_activity_settings">SettingsActivity</string>
-    <string name="produktuak">PRODUKTUAK</string>
-    <string name="salmentak">SALMENTAK</string>
-    <string name="Eskaera">Eskaera sortu</string>
-    <string name="BezeroaSpinner">Bezeroa:</string>
+
+    <!--Main-->
+    <string name="MainProduktuak">Produktuak</string>
+    <string name="MainBezeroak">Bezeroak</string>
+    <string name="MainSalmentak">Salmentak</string>
+
+    <!--MainMenu-->
+    <string name="MenuAukerak">Aukerak</string>
+    <string name="MenuGureBuruz">Gure Buruz</string>
+
+    <!--NavMenu-->
+    <string name="MenuBilatu">Bilatu</string>
+
+    <!--PvMenu-->
+    <string name="MenuSortu">Salmenta eskaera sortu</string>
+
+    <!--CrearPedido-->
+    <string name="Bezeroa">Bezeroa:</string>
+    <string name="EskaeraSortu">Eskaera sortu</string>
+
+    <!--DetallesProducto-->
+    <string name="ProdImg">Produktuaren argazkia</string>
+    <string name="SaskianSartuTitle">Saskian sartu</string>
+    <string name="SaskianSartuText">Zenbat produktu sartu nahi dituzu saskian?</string>
+    <string name="SaskianSartuQuantity">Kantitatea</string>
+    <string name="SaskianSartuAccept">Sartu</string>
+    <string name="SaskianSartuClose">Itxi</string>
+    <string name="AddCarrito">Saskira sartu</string>
+
+    <!--ListaProductos-->
+    <string name="ProduktuakTitle">PRODUKTUAK</string>
+    <string name="ProduktuakList">Produktuen zerrenda:</string>
+    <string name="Kategoria">Kategoria:</string>
+
+    <!--ListaVentas-->
+    <string name="SalmentakTitle">SALMENTAK</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>

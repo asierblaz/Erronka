@@ -6,7 +6,6 @@
         android:id="@+id/app_create_sale"
         android:enabled="true"
         android:icon="@drawable/ic_outline_add_24"
-        android:title="+"
-        app:actionViewClass="android.widget.Button"
-        app:showAsAction="ifRoom"/>
+        android:title="@string/MenuSortu"
+        app:showAsAction="ifRoom" />
 </menu>

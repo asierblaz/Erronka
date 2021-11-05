@@ -4,8 +4,8 @@
 
     <item
         android:id="@+id/itemAjustes"
-        android:title="Ajustes" />
+        android:title="@string/MenuAukerak" />
     <item
         android:id="@+id/itemAbout"
-        android:title="About Us" />
+        android:title="@string/MenuGureBuruz" />
 </menu>
