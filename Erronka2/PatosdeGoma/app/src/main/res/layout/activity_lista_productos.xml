@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bglista1"
-    tools:context=".activities.ListaProductos">
+    tools:context=".activities.ListaProductos"
+    >
 
     <LinearLayout
         android:layout_width="match_parent"

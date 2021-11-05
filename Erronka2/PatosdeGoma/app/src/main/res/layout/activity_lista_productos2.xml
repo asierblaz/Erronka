@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bglista1"
+    android:orientation="vertical"
+    tools:context=".activities.ListaProductos">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:paddingStart="10dp"
+        android:text="@string/Kategoria" />
+
+    <Spinner
+        android:id="@+id/catSpinner"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:text="@string/ProduktuakList" />
+
+    <ListView
+        android:id="@+id/listProductos"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="25sp"
+        android:layout_marginRight="25sp"
+        android:layout_marginBottom="50sp"
+        android:padding="15sp" />
+
+</LinearLayout>

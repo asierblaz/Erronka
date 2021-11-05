@@ -42,16 +42,16 @@ public class DetallesProductos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalles_productos);
 
-        /**Icono y color del texto del menu**/
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>"+p1.getName()+"</font>"));
 
         textNombre = findViewById(R.id.textNombre);
         textPrecio = findViewById(R.id.texPrecio);
         textCategoria = findViewById(R.id.textCategoria);
         img = findViewById(R.id.imageView);
         p1 = (Produktua) getIntent().getSerializableExtra("prod");
+        //Icono y color del texto del menu
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>"+p1.getName()+"</font>"));
         prods = (ArrayList<Produktua>) getIntent().getSerializableExtra("array");
         textNombre.setText(p1.getName());
         textCategoria.setText(p1.getCategoria());

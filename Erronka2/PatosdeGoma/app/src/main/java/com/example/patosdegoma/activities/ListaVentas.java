@@ -21,12 +21,12 @@ public class ListaVentas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_lista_ventas);
+        setContentView(R.layout.activity_lista_ventas2);
         Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
 
         /**Icono y color del texto del menu**/
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher_foreground);
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Salmentak</font>"));
 
         ListView Lista = findViewById(R.id.Lista);

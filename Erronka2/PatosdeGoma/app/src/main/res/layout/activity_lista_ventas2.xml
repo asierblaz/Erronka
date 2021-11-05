@@ -7,25 +7,14 @@
     android:layout_height="match_parent"
     android:background="@drawable/bglista1"
     android:orientation="vertical"
-    tools:context=".activities.ListaVentas"
-    >
-
-    <TextView
-        android:id="@+id/textViewSalmentak"
-        android:layout_width="match_parent"
-        android:layout_height="66dp"
-        android:layout_marginTop="40dp"
-        android:fontFamily="@font/bubblegum_sans"
-        android:gravity="center|center_horizontal"
-        android:text="@string/SalmentakTitle"
-        android:textColor="#AA7814"
-        android:textSize="34sp" />
+    tools:context=".activities.ListaVentas">
 
     <ListView
         android:id="@+id/Lista"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="50dp"
         android:layout_marginRight="30dp"
         android:layout_marginBottom="50dp" />
 
