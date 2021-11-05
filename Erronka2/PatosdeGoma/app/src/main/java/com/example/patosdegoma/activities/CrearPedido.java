@@ -15,9 +15,8 @@ import android.widget.Toast;
 
 import com.example.patosdegoma.DataConnect;
 import com.example.patosdegoma.R;
-import com.example.patosdegoma.clases.Bezeroa;
-import com.example.patosdegoma.clases.ProductoCarrito;
-import com.example.patosdegoma.clases.Salmenta;
+import com.example.patosdegoma.models.Bezeroa;
+import com.example.patosdegoma.models.ProductoCarrito;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -194,7 +193,7 @@ public class CrearPedido extends AppCompatActivity {
         //Icono y color del texto del menu
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Patinhos Gomosos</font>"));
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Salmenta Saskia</font>"));
 
         ArrayAdapter<Bezeroa> bezeroak = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, Bezeroa.bezeroak);
         lineaPedido = findViewById(R.id.lineaPedido);

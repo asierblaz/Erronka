@@ -12,7 +12,7 @@ import android.widget.Button;
 
 import com.example.patosdegoma.DataConnect;
 import com.example.patosdegoma.R;
-import com.example.patosdegoma.clases.Produktua;
+import com.example.patosdegoma.models.Produktua;
 
 public class MainActivity extends AppCompatActivity {
 

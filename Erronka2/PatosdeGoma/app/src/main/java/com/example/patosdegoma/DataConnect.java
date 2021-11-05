@@ -9,9 +9,9 @@ import java.sql.Statement;
 import android.util.Log;
 
 import com.example.patosdegoma.activities.CrearPedido;
-import com.example.patosdegoma.clases.Bezeroa;
-import com.example.patosdegoma.clases.Produktua;
-import com.example.patosdegoma.clases.Salmenta;
+import com.example.patosdegoma.models.Bezeroa;
+import com.example.patosdegoma.models.Produktua;
+import com.example.patosdegoma.models.Salmenta;
 
 public class DataConnect extends Thread {
 

@@ -15,7 +15,7 @@ import android.widget.SearchView;
 import android.widget.Spinner;
 
 import com.example.patosdegoma.R;
-import com.example.patosdegoma.clases.Produktua;
+import com.example.patosdegoma.models.Produktua;
 
 import java.util.ArrayList;
 
@@ -42,7 +42,7 @@ public class ListaProductos extends AppCompatActivity {
         /**Icono y color del texto del menu**/
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Patinhos Gomosos</font>"));
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>PRODUKTUAK</font>"));
 
         listaProductos = findViewById(R.id.listProductos);
         catSpinner = findViewById(R.id.catSpinner);

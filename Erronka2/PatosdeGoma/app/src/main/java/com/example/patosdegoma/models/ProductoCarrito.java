@@ -1,4 +1,4 @@
-package com.example.patosdegoma.clases;
+package com.example.patosdegoma.models;
 
 import java.util.ArrayList;
 

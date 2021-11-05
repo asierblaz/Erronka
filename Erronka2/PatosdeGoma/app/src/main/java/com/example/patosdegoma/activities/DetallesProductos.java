@@ -16,9 +16,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.patosdegoma.R;
-import com.example.patosdegoma.clases.OnSwipeTouchListener;
-import com.example.patosdegoma.clases.ProductoCarrito;
-import com.example.patosdegoma.clases.Produktua;
+import com.example.patosdegoma.models.OnSwipeTouchListener;
+import com.example.patosdegoma.models.ProductoCarrito;
+import com.example.patosdegoma.models.Produktua;
 
 import java.util.ArrayList;
 
@@ -45,7 +45,7 @@ public class DetallesProductos extends AppCompatActivity {
         /**Icono y color del texto del menu**/
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Patinhos Gomosos</font>"));
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>"+p1.getName()+"</font>"));
 
         textNombre = findViewById(R.id.textNombre);
         textPrecio = findViewById(R.id.texPrecio);

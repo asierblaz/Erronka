@@ -14,7 +14,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.patosdegoma.R;
-import com.example.patosdegoma.clases.Salmenta;
+import com.example.patosdegoma.models.Salmenta;
 
 public class ListaVentas extends AppCompatActivity {
 
@@ -26,8 +26,8 @@ public class ListaVentas extends AppCompatActivity {
 
         /**Icono y color del texto del menu**/
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        getSupportActionBar().setIcon(R.mipmap.ic_launcher);
-        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Patinhos Gomosos</font>"));
+        getSupportActionBar().setIcon(R.mipmap.ic_launcher_foreground);
+        getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Salmentak</font>"));
 
         ListView Lista = findViewById(R.id.Lista);
         ArrayAdapter<Salmenta> salmentaArrayAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, Salmenta.salmentak);
