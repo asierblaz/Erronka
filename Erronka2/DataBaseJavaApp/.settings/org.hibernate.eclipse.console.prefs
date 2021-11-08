@@ -1,3 +1,3 @@
-default.configuration=DataBaseJavaApp
+default.configuration=bidatubase
 eclipse.preferences.version=1
 hibernate3.enabled=true
