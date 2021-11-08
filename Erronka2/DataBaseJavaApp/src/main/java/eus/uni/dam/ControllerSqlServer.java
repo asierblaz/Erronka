@@ -23,7 +23,7 @@ public class ControllerSqlServer {
 
 	public void produktuakToDB(List<ProductTemplate> produktuak) {
 		for (ProductTemplate p : produktuak) {
-			Produktua p1 = new Produktua(p.getId(), p.getProductCategory().getName(), p.getName(), p.getDefaultCode(),
+			Produktua p1 = new Produktua(p.getId(), p.getProductCategory().getName(), p.getDefaultCode(), p.getName(),
 					Float.parseFloat(p.getListPrice() + ""));
 
 			sqlServerDao.updateProduktua(p1);
