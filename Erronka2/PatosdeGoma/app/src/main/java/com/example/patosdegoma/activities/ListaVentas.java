@@ -14,6 +14,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.patosdegoma.R;
+import com.example.patosdegoma.models.Produktua;
 import com.example.patosdegoma.models.Salmenta;
 
 public class ListaVentas extends AppCompatActivity {
@@ -54,7 +55,11 @@ public class ListaVentas extends AppCompatActivity {
 
     public void listaClick(AdapterView<?> adapterView, View view, int i, long l) {
         Salmenta s1 = Salmenta.salmentak.get(i);
-        Log.d("Venta", s1.toStringAll());
+        Intent intent = new Intent(ListaVentas.this, DetallesSalmenta.class);
+        intent.putExtra("salmenta", s1);
+        startActivity(intent);
 
     }
+
+
 }
