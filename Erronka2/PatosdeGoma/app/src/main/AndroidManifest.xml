@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PatosdeGoma">
         <activity
+            android:name=".activities.DetallesSalmenta"
+            android:exported="true" />
+        <activity
             android:name=".activities.CrearPedido"
             android:exported="true" />
         <activity

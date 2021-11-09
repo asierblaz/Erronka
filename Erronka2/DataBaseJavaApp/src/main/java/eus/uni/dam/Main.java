@@ -31,8 +31,7 @@ public class Main {
 		Scanner in = new Scanner(System.in);
 
 		System.out.println("\tMENUA\n" + "====================================\n" + "1.- Datu Guztiak Esportatu\n"
-				+ "2.- Esportatu nahi diren datuak aukeratu\n" + "3.- Log-a Irakurri\n" 
-				+ "4.- Log-a Ikusi\n"
+				+ "2.- Esportatu nahi diren datuak aukeratu\n" + "3.- Log-a Irakurri\n" + "4.- Log-a Ikusi\n"
 				+ "5-Irten");
 
 		System.out.print("\nAukeratu zenbaki bat ");
@@ -121,14 +120,13 @@ public class Main {
 					System.err.println("Fitxategia ez da aurkitu");
 				}
 			}
-			
-			if(n==4) {
+
+			if (n == 4) {
 				logaIrekiProcess();
 			}
 
 			System.out.println("\tMENUA\n" + "====================================\n" + "1.- Datu Guztiak Esportatu\n"
-					+ "2.- Esportatu nahi diren datuak aukeratu\n" + "3.- Log-a Irakurri\n" 
-					+ "4.- Log-a Ikusi\n"
+					+ "2.- Esportatu nahi diren datuak aukeratu\n" + "3.- Log-a Irakurri\n" + "4.- Log-a Ikusi\n"
 					+ "5- Irten");
 			System.out.print("\nAukeratu zenbaki bat ");
 			n = in.nextInt();
@@ -171,8 +169,9 @@ public class Main {
 
 		try {
 
-			ProcessBuilder pb = new ProcessBuilder("C:\\Program Files\\Internet Explorer\\iexplore.exe\"","file:C:\\Users\\mantecon.julen\\Documents\\Erronka\\Erronka2\\DataBaseJavaApp\\options.xml");
-	//		ProcessBuilder pb = new ProcessBuilder("chrome", "C:\\Users\\blazquez.asier\\Desktop\\Nueva carpeta\\options.xml");
+			ProcessBuilder pb = new ProcessBuilder("C:\\Program Files\\Internet Explorer\\iexplore.exe\"","file:///C:/Users/blazquez.asier/Documents/DAM2/Erronka/Erronka2/DataBaseJavaApp/options.xml");
+			// ProcessBuilder pb = new ProcessBuilder("chrome",
+			// "C:\\Users\\blazquez.asier\\Desktop\\Nueva carpeta\\options.xml");
 			Process p1 = pb.start();
 
 		} catch (Exception e) {
