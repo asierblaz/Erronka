@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -24,7 +25,7 @@ public class ListaVentas extends AppCompatActivity {
         setContentView(R.layout.activity_lista_ventas2);
         Thread.currentThread().setPriority(Thread.MIN_PRIORITY);
 
-        /**Icono y color del texto del menu**/
+        /*Icono y color del texto del menu*/
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
         getSupportActionBar().setTitle(Html.fromHtml("<font color='#b99932'>Salmentak</font>"));
@@ -35,7 +36,11 @@ public class ListaVentas extends AppCompatActivity {
 
         Lista.setOnItemClickListener(this::listaClick);
 
-
+        try{
+            ((TextView) findViewById(R.id.SalmentakTitle)).setText(getResources().getIdentifier("@string/" + MainActivity.lang + "_SalmentakTitle", null, getPackageName()));
+        }catch(Exception e){
+            Log.d("String", e.getMessage());
+        }
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -44,7 +49,7 @@ public class ListaVentas extends AppCompatActivity {
     }
     public boolean onOptionsItemSelected(MenuItem item){
         switch(item.getItemId()){
-            case R.id.app_create_sale:
+            case R.id.MenuSortu:
                 Intent intent = new Intent(ListaVentas.this, CrearPedido.class);
                 startActivity(intent);
                 return true;

@@ -11,13 +11,13 @@
     >
 
     <TextView
-        android:id="@+id/textViewSalmentak"
+        android:id="@+id/SalmentakTitle"
+        android:text="@string/eu_SalmentakTitle"
         android:layout_width="match_parent"
         android:layout_height="66dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/bubblegum_sans"
         android:gravity="center|center_horizontal"
-        android:text="@string/SalmentakTitle"
         android:textColor="#AA7814"
         android:textSize="34sp" />
 

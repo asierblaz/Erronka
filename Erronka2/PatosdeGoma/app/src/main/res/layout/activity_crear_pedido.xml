@@ -21,11 +21,11 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/CPBezeroa"
+        android:text="@string/eu_CPBezeroa"
         android:layout_width="358dp"
         android:layout_height="24dp"
         android:layout_marginTop="24dp"
-        android:text="@string/Bezeroa"
         app:layout_constraintBottom_toTopOf="@+id/BezeroakSpinner"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
@@ -33,23 +33,36 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.25" />
 
+    <TextView
+        android:id="@+id/CPProduktuak"
+        android:layout_width="358dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/eu_CPProduktuak"
+        app:layout_constraintBottom_toTopOf="@+id/lineaPedido"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
     <ListView
         android:id="@+id/lineaPedido"
         android:layout_width="325dp"
         android:layout_height="387dp"
         android:layout_marginTop="100dp"
-        app:layout_constraintBottom_toTopOf="@+id/CrearPedidoBtn"
+        app:layout_constraintBottom_toTopOf="@+id/CPEskaeraSortu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/BezeroakSpinner"
         app:layout_constraintVertical_bias="1.0"></ListView>
 
     <Button
-        android:id="@+id/CrearPedidoBtn"
+        android:id="@+id/CPEskaeraSortu"
+        android:text="@string/eu_CPEskaeraSortu"
         android:layout_width="321dp"
         android:layout_height="72dp"
         android:layout_marginBottom="16dp"
-        android:text="@string/EskaeraSortu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

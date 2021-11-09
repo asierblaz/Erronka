@@ -16,22 +16,22 @@
         tools:layout_editor_absoluteY="-66dp">
 
         <TextView
-            android:id="@+id/textViewTitulo"
+            android:id="@+id/ProdTitle"
+            android:text="@string/eu_ProdTitle"
             android:layout_width="match_parent"
             android:layout_height="66dp"
             android:layout_marginTop="40sp"
             android:fontFamily="@font/bubblegum_sans"
             android:gravity="center|center_horizontal"
-            android:text="@string/ProduktuakTitle"
             android:textColor="#AA7814"
             android:textSize="34sp" />
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/CatList"
+            android:text="@string/eu_CatList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:text="@string/Kategoria" />
+            android:paddingStart="10dp"/>
 
         <Spinner
             android:id="@+id/catSpinner"
@@ -40,11 +40,11 @@
             tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/ProdList"
+            android:text="@string/eu_ProdList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingStart="10dp"
-            android:text="@string/ProduktuakList" />
+            android:paddingStart="10dp"/>
 
         <ListView
             android:id="@+id/listProductos"

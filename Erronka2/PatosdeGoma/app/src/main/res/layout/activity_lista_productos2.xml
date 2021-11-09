@@ -9,12 +9,12 @@
     tools:context=".activities.ListaProductos">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/CatList2"
+        android:text="@string/eu_CatList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:paddingStart="10dp"
-        android:text="@string/Kategoria" />
+        android:paddingStart="10dp"/>
 
     <Spinner
         android:id="@+id/catSpinner"
@@ -23,11 +23,11 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/ProdList2"
+        android:text="@string/eu_ProdList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="10dp"
-        android:text="@string/ProduktuakList" />
+        android:paddingStart="10dp"/>
 
     <ListView
         android:id="@+id/listProductos"

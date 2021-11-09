@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/itemAjustes"
-        android:title="@string/MenuAukerak" />
+        android:id="@+id/MenuAukerak"
+        android:title="@string/eu_MenuAukerak" />
     <item
-        android:id="@+id/itemAbout"
-        android:title="@string/MenuGureBuruz" />
+        android:id="@+id/MenuGureBuruz"
+        android:title="@string/eu_MenuGureBuruz" />
 </menu>

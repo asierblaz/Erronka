@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/app_create_sale"
+        android:id="@+id/MenuSortu"
         android:enabled="true"
-        android:icon="@drawable/ic_outline_add_24"
-        android:title="@string/MenuSortu"
+        android:icon="@drawable/ic_outline_shopping_cart_24"
+        android:title="@string/eu_MenuSortu"
         app:showAsAction="ifRoom" />
 </menu>

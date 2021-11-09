@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.patosdegoma.DataConnect;
@@ -190,6 +192,15 @@ public class CrearPedido extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_pedido);
 
+        try{
+            ((TextView) findViewById(R.id.CPBezeroa)).setText(getResources().getIdentifier("@string/" + MainActivity.lang + "_CPBezeroa", null, getPackageName()));
+            ((TextView) findViewById(R.id.CPProduktuak)).setText(getResources().getIdentifier("@string/" + MainActivity.lang + "_CPProduktuak", null, getPackageName()));
+            ((Button) findViewById(R.id.CPEskaeraSortu)).setText(getResources().getIdentifier("@string/" + MainActivity.lang + "_CPEskaeraSortu", null, getPackageName()));
+            ((MenuItem)findViewById(R.id.MenuSortu)).setTitle(getResources().getIdentifier("@string/"+MainActivity.lang+"_MenuSortu",null,getPackageName()));
+        }catch(Exception e){
+            Log.d("String", e.getMessage());
+        }
+
         //Icono y color del texto del menu
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setIcon(R.mipmap.ic_launcher);
@@ -226,7 +237,7 @@ public class CrearPedido extends AppCompatActivity {
         SolIdQuery.start();
         InsertOrderQuery.setPriority(10);
         InsertLineQuery.setPriority(5);
-        CrearPedidoBtn = findViewById(R.id.CrearPedidoBtn);
+        CrearPedidoBtn = findViewById(R.id.CPEskaeraSortu);
         CrearPedidoBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -240,7 +251,6 @@ public class CrearPedido extends AppCompatActivity {
                 goBack();
             }
         });
-
     }
 
     private float getTotal() {

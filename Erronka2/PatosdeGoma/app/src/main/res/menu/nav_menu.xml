@@ -3,9 +3,9 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/app_bar_search"
+        android:id="@+id/MenuBilatu"
         android:icon="@drawable/ic_baseline_search_24"
-        android:title="@string/MenuBilatu"
+        android:title="@string/eu_MenuBilatu"
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="ifRoom|withText" />
 </menu>

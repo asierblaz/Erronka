@@ -1,42 +1,71 @@
 <resources>
     <string name="app_name">Patinhos Gomosos</string>
+    <string name="dev">Developed by T4</string>
     <string name="title_activity_settings">SettingsActivity</string>
 
     <!--Main-->
-    <string name="MainProduktuak">Produktuak</string>
-    <string name="MainBezeroak">Bezeroak</string>
-    <string name="MainSalmentak">Salmentak</string>
+    <string name="eu_MainProduktuak">Produktuak</string>
+    <string name="eu_MainBezeroak">Bezeroak</string>
+    <string name="eu_MainSalmentak">Salmentak</string>
+    <string name="es_MainProduktuak">Productos</string>
+    <string name="es_MainBezeroak">Clientes</string>
+    <string name="es_MainSalmentak">Ventas</string>
 
     <!--MainMenu-->
-    <string name="MenuAukerak">Aukerak</string>
-    <string name="MenuGureBuruz">Gure Buruz</string>
+    <string name="eu_MenuAukerak">Aukerak</string>
+    <string name="eu_MenuGureBuruz">Gure Buruz</string>
+    <string name="es_MenuAukerak">Opciones</string>
+    <string name="es_MenuGureBuruz">Sobre nosotros</string>
 
     <!--NavMenu-->
-    <string name="MenuBilatu">Bilatu</string>
+    <string name="eu_MenuBilatu">Bilatu</string>
+    <string name="es_MenuBilatu">Buscar</string>
 
     <!--PvMenu-->
-    <string name="MenuSortu">Salmenta eskaera sortu</string>
+    <string name="eu_MenuSortu">Salmenta eskaera sortu</string>
+    <string name="es_MenuSortu">Crear petición de presupuesto</string>
 
     <!--CrearPedido-->
-    <string name="Bezeroa">Bezeroa:</string>
-    <string name="EskaeraSortu">Eskaera sortu</string>
+    <string name="eu_CPBezeroa">Bezeroa:</string>
+    <string name="eu_CPProduktuak">Produktuak:</string>
+    <string name="eu_CPEskaeraSortu">Eskaera sortu</string>
+    <string name="es_CPBezeroa">Cliente:</string>
+    <string name="es_CPProduktuak">Productos:</string>
+    <string name="es_CPEskaeraSortu">Crear peticion</string>
 
     <!--DetallesProducto-->
-    <string name="ProdImg">Produktuaren argazkia</string>
-    <string name="SaskianSartuTitle">Saskian sartu</string>
-    <string name="SaskianSartuText">Zenbat produktu sartu nahi dituzu saskian?</string>
-    <string name="SaskianSartuQuantity">Kantitatea</string>
-    <string name="SaskianSartuAccept">Sartu</string>
-    <string name="SaskianSartuClose">Itxi</string>
-    <string name="AddCarrito">Saskira sartu</string>
+    <string name="eu_ProdImg">Produktuaren argazkia</string>
+    <string name="eu_ProdName">Izena</string>
+    <string name="eu_ProdCat">Kategoria</string>
+    <string name="eu_ProdPrice">Prezioa</string>
+    <string name="eu_SaskianSartuTitle">Saskian sartu</string>
+    <string name="eu_SaskianSartuText">Zenbat produktu sartu nahi dituzu saskian?</string>
+    <string name="eu_SaskianSartuQuantity">Kantitatea</string>
+    <string name="eu_SaskianSartuAccept">Sartu</string>
+    <string name="eu_SaskianSartuClose">Itxi</string>
+    <string name="eu_AddCarrito">Saskira sartu</string>
+    <string name="es_ProdImg">Imagen del producto</string>
+    <string name="es_ProdName">Nombre</string>
+    <string name="es_ProdCat">Categoría</string>
+    <string name="es_ProdPrice">Precio</string>
+    <string name="es_SaskianSartuTitle">Añadir al carro</string>
+    <string name="es_SaskianSartuText">Cuántos productos quieres añadir al carro?</string>
+    <string name="es_SaskianSartuQuantity">Cantidad</string>
+    <string name="es_SaskianSartuAccept">Añadir</string>
+    <string name="es_SaskianSartuClose">Cerrar</string>
+    <string name="es_AddCarrito">Añadir al carro</string>
 
     <!--ListaProductos-->
-    <string name="ProduktuakTitle">PRODUKTUAK</string>
-    <string name="ProduktuakList">Produktuen zerrenda:</string>
-    <string name="Kategoria">Kategoria:</string>
+    <string name="eu_ProdTitle">PRODUKTUAK</string>
+    <string name="eu_ProdList">Produktuen zerrenda:</string>
+    <string name="eu_CatList">Kategoria:</string>
+    <string name="es_ProdTitle">PRODUCTOS</string>
+    <string name="es_ProdList">Lista de productos:</string>
+    <string name="es_CatList">Categoría:</string>
 
     <!--ListaVentas-->
-    <string name="SalmentakTitle">SALMENTAK</string>
+    <string name="eu_SalmentakTitle">SALMENTAK</string>
+    <string name="es_SalmentakTitle">VENTAS</string>
 
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
