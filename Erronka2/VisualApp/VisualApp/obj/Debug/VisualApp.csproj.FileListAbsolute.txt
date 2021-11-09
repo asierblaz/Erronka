@@ -1,0 +1,13 @@
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\VisualApp.exe.config
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\VisualApp.exe
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\VisualApp.pdb
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.csproj.AssemblyReference.cache
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.Properties.Resources.resources
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.csproj.GenerateResource.cache
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.csproj.CoreCompileInputs.cache
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.exe
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.pdb
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.MenuNagusia.resources
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.BezeroErosketak.resources
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.ProduktuSalduenak.resources
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.Herrialdeak.resources

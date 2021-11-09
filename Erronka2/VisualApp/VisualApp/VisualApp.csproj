@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DE11B9F7-21AB-40C1-B4E6-643EF3EC4AD4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>VisualApp</RootNamespace>
+    <AssemblyName>VisualApp</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BezeroErosketakDataSet.cs">
+      <DependentUpon>BezeroErosketakDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Herrialdeak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Herrialdeak.Designer.cs">
+      <DependentUpon>Herrialdeak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HerrialdeakDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HerrialdeakDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProduktuSalduenakDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProduktuSalduenakDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ProduktuSalduenak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProduktuSalduenak.Designer.cs">
+      <DependentUpon>ProduktuSalduenak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BezeroErosketak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BezeroErosketak.Designer.cs">
+      <DependentUpon>BezeroErosketak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuNagusia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuNagusia.Designer.cs">
+      <DependentUpon>MenuNagusia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BezeroErosketakDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BezeroErosketakDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Herrialdeak.resx">
+      <DependentUpon>Herrialdeak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProduktuSalduenak.resx">
+      <DependentUpon>ProduktuSalduenak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BezeroErosketak.resx">
+      <DependentUpon>BezeroErosketak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuNagusia.resx">
+      <DependentUpon>MenuNagusia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="BezeroErosketakDataSet.xsc">
+      <DependentUpon>BezeroErosketakDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BezeroErosketakDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BezeroErosketakDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BezeroErosketakDataSet.xss">
+      <DependentUpon>BezeroErosketakDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HerrialdeakDataSet.xsc">
+      <DependentUpon>HerrialdeakDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HerrialdeakDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HerrialdeakDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HerrialdeakDataSet.xss">
+      <DependentUpon>HerrialdeakDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProduktuSalduenakDataSet.xsc">
+      <DependentUpon>ProduktuSalduenakDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ProduktuSalduenakDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ProduktuSalduenakDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ProduktuSalduenakDataSet.xss">
+      <DependentUpon>ProduktuSalduenakDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
