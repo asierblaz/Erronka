@@ -9,11 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.patosdegoma.DataConnect;
 import com.example.patosdegoma.R;
 import com.example.patosdegoma.models.Produktua;
 import com.example.patosdegoma.models.Salmenta;

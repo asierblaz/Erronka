@@ -7,6 +7,5 @@
         android:enabled="true"
         android:icon="@drawable/ic_outline_shopping_cart_24"
         android:title="@string/eu_MenuSortu"
-        android:title="@string/MenuSortu"
         app:showAsAction="ifRoom" />
 </menu>

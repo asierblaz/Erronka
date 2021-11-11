@@ -2,13 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/DS_SalmentaIStatus"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/fondo"
     tools:context=".activities.DetallesSalmenta">
 
     <TextView
-        android:id="@+id/textView7"
+        android:id="@+id/DS_SalmentaName"
         android:layout_width="63dp"
         android:layout_height="27dp"
         android:text="Salmenta:"
@@ -20,7 +21,7 @@
         app:layout_constraintVertical_bias="0.22" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/DS_SalmentaDOrder"
         android:layout_width="110dp"
         android:layout_height="26dp"
         android:text="Date Order"
@@ -44,7 +45,7 @@
         tools:text="invoice status" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/DS_SalmentaCDate"
         android:layout_width="110dp"
         android:layout_height="26dp"
         android:text="Create Date"
@@ -188,7 +189,7 @@
         tools:text="invoice status" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/DS_SalmentaState"
         android:layout_width="63dp"
         android:layout_height="27dp"
         android:text="State:"

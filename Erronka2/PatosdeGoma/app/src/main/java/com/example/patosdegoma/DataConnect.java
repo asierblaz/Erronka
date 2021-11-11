@@ -10,6 +10,7 @@ import android.util.Log;
 
 import com.example.patosdegoma.activities.CrearPedido;
 import com.example.patosdegoma.models.Bezeroa;
+import com.example.patosdegoma.models.ProductoCarrito;
 import com.example.patosdegoma.models.Produktua;
 import com.example.patosdegoma.models.Salmenta;
 
@@ -35,39 +36,52 @@ public class DataConnect extends Thread {
 
     public static void SalmentakQuery(){
         SalmentakQuery.setPriority(Thread.MAX_PRIORITY);
-        if (!SalmentakQuery.isAlive()){
+        if (SalmentakQuery.getState() == State.NEW){
             SalmentakQuery.start();
         }
     }
 
     public static void ProduktuakQuery(){
         ProduktuakQuery.setPriority(Thread.MAX_PRIORITY);
-        if (!ProduktuakQuery.isAlive()){
+        if (ProduktuakQuery.getState() == State.NEW){
             ProduktuakQuery.start();
         }
     }
 
     public static void BezeroakQuery(){
         BezeroakQuery.setPriority(Thread.MAX_PRIORITY);
-        if (!BezeroakQuery.isAlive()){
+        if (BezeroakQuery.getState() == State.NEW){
             BezeroakQuery.start();
         }
     }
 
     public static void SoIdQuery(){
         SoIdQuery.setPriority(Thread.MAX_PRIORITY);
-        if (!SoIdQuery.isAlive()){
+        if (SoIdQuery.getState() == State.NEW){
             SoIdQuery.start();
         }
     }
 
     public static void SolIdQuery(){
         SolIdQuery.setPriority(Thread.MAX_PRIORITY);
-        if (!SolIdQuery.isAlive()){
+        if (SolIdQuery.getState() == State.NEW){
             SolIdQuery.start();
         }
     }
 
+    public static void InsertOrderQuery(){
+        InsertOrderQuery.setPriority(Thread.MAX_PRIORITY);
+        if (InsertOrderQuery.getState() == State.NEW){
+            InsertOrderQuery.start();
+        }
+    }
+
+    public static void InsertLineQuery(){
+        InsertLineQuery.setPriority(Thread.NORM_PRIORITY);
+        if (InsertLineQuery.getState() == State.NEW){
+            InsertLineQuery.start();
+        }
+    }
 
     static Thread ProduktuakQuery = new Thread(() ->
     {
@@ -122,6 +136,7 @@ public class DataConnect extends Thread {
             ResultSet rs = st.executeQuery(query);
             while (rs.next()) {
                 CrearPedido.so_id = rs.getInt(1)+1;
+                CrearPedido.so_name = "S000" + CrearPedido.so_id;
             }
             conn.close();
         } catch (Exception e) {
@@ -170,16 +185,70 @@ public class DataConnect extends Thread {
         }
     });
 
+    //Thread que inserta un pedido
+    static Thread InsertOrderQuery = new Thread(() ->
+    {
+        String query = "insert into sale_order(id, require_signature, require_payment, partner_id," +
+                "partner_invoice_id, partner_shipping_id, pricelist_id, currency_id," +
+                "name, state, date_order, create_date, invoice_status," +
+                "amount_untaxed, amount_tax, amount_total, currency_rate, company_id, team_id, " +
+                "create_uid, write_uid, write_date, picking_policy, warehouse_id)" +
+                "values (" + CrearPedido.so_id + ", true, false, " + CrearPedido.partner_id + ", " + CrearPedido.partner_id + ", " +
+                CrearPedido.partner_id + ", 1 , 1, '" + CrearPedido.so_name + "','draft', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, " +
+                "'no', " + CrearPedido.so_amount + ", 0, " + CrearPedido.so_amount + ", 1, 1, 1, 2, 2, " +
+                "CURRENT_TIMESTAMP, 'direct', 1)";
 
-    public String getUrl() {
-        return url;
-    }
+        try {
+            CrearPedido.pedido.acquire();
+            try {
+                Log.d("SO_Query", query);
+                Connection conn = DataConnect.Connect();
+                Statement st = conn.createStatement();
+                st.executeUpdate(query);
+                conn.close();
+            } finally {
+                CrearPedido.pedido.release();
+            }
+        } catch (Exception e) {
+            Log.d("InsertOrderQuery", e.getMessage());
+        }
+    });
 
-    public String getUser() {
-        return user;
-    }
+    //Thread que inserta las lineas de pedido
+    static Thread InsertLineQuery = new Thread(() ->
+    {
+        try {
+            CrearPedido.pedido.acquire();
+            try {
+                Connection conn = DataConnect.Connect();
+                for (ProductoCarrito p : ProductoCarrito.carrito) {
+                    String query = "insert into sale_order_line(id, order_id, name, sequence, invoice_status, " +
+                            "price_unit, price_tax, price_subtotal, price_total, price_reduce, price_reduce_taxinc, " +
+                            "price_reduce_taxexcl, discount, product_id, product_uom, product_uom_qty, " +
+                            "qty_delivered_method, qty_delivered, qty_delivered_manual, qty_to_invoice, " +
+                            "qty_invoiced,untaxed_amount_invoiced, untaxed_amount_to_invoice, currency_id, " +
+                            "company_id, order_partner_id, state, customer_lead, create_uid, create_date, " +
+                            "write_uid, write_date)" +
+                            "values( " + CrearPedido.sol_id + ", " + CrearPedido.so_id + ", '" + p.getProducto().getName() +
+                            "' , 10, 'no', " + p.getProducto().getPrezioa() + ", 0, " + p.getPrecio() +
+                            ", " + p.getPrecio() + ", " + p.getPrecio() + ", " + p.getPrecio() +
+                            ", " + p.getPrecio() + ", 0, " + p.getProducto().getId() + ", 1, " +
+                            p.getCantidad() + ", 'stock_move', 0, 0, 0, 0, 0, " + p.getPrecio() +
+                            ", 1, 1, " + CrearPedido.partner_id + ", 'draft', 0, 2, CURRENT_TIMESTAMP, 2, " +
+                            "CURRENT_TIMESTAMP)";
+                    Log.d("SOL_Query", query);
+                    Statement st = conn.createStatement();
+                    st.executeUpdate(query);
+                    CrearPedido.sol_id -= -1;
+                }
+            } finally {
+                CrearPedido.pedido.release();
+                ProductoCarrito.carrito.clear();
+            }
+        } catch (Exception e) {
+            Log.d("InsertLineQuery", e.getMessage());
+            e.printStackTrace();
+        }
 
-    public String getPass() {
-        return pass;
-    }
+    });
 }
