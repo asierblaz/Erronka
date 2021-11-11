@@ -143,6 +143,7 @@ namespace VisualApp
             this.Name = "ProduktuSalduenak";
             this.Text = "Bat";
             this.Load += new System.EventHandler(this.ProduktuSalduenak_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Close);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProduktuChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produktuSalduenakDataSet)).EndInit();

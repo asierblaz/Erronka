@@ -31,9 +31,12 @@ namespace VisualApp
 
         private void button1_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
+        private void Form_Close(object sender, System.EventArgs e)
+        {
             MenuNagusia menuNagusia = new MenuNagusia();
             menuNagusia.Show();
-            this.Close();
         }
 
         private void ProduktuSalduenak_Load(object sender, EventArgs e)

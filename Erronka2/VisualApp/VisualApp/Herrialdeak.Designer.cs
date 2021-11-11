@@ -67,16 +67,20 @@ namespace VisualApp
             this.HerrialdeChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.Inclination = 40;
+            chartArea1.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
             chartArea1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             chartArea1.Name = "HerrialdeChart";
             this.HerrialdeChart.ChartAreas.Add(chartArea1);
+            this.HerrialdeChart.Cursor = System.Windows.Forms.Cursors.Default;
             this.HerrialdeChart.Location = new System.Drawing.Point(-6, 19);
             this.HerrialdeChart.Name = "HerrialdeChart";
+            this.HerrialdeChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
             series1.ChartArea = "HerrialdeChart";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
             this.HerrialdeChart.Series.Add(series1);
             this.HerrialdeChart.Size = new System.Drawing.Size(577, 374);
             this.HerrialdeChart.TabIndex = 0;
@@ -163,6 +167,7 @@ namespace VisualApp
             this.Controls.Add(this.groupBox1);
             this.Name = "Herrialdeak";
             this.Text = "Herrialdeak";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Close);
             this.Load += new System.EventHandler(this.Herrialdeak_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.HerrialdeChart)).EndInit();

@@ -30,8 +30,6 @@ namespace VisualApp
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MenuNagusia menuNagusia = new MenuNagusia();
-            menuNagusia.Show();
             this.Close();
         }
 
@@ -54,6 +52,13 @@ namespace VisualApp
 
         }
 
+        private void Form_Close(object sender, System.EventArgs e)
+        {
+            MenuNagusia menuNagusia = new MenuNagusia();
+            menuNagusia.Show();
+        }
+
+
         private void ZematErakutsi_ValueChanged(object sender, EventArgs e)
         {
             int erakutsiBalio = (int)ZematErakutsi.Value;
@@ -67,6 +72,5 @@ namespace VisualApp
             BezeroChart.DataBind();
         }
 
- 
     }
 }

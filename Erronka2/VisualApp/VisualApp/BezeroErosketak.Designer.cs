@@ -76,6 +76,11 @@ namespace VisualApp
             0,
             0,
             0});
+            this.ZematErakutsi.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.ZematErakutsi.Name = "ZematErakutsi";
             this.ZematErakutsi.Size = new System.Drawing.Size(154, 20);
             this.ZematErakutsi.TabIndex = 1;
@@ -93,9 +98,9 @@ namespace VisualApp
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(42, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 24);
+            this.label1.Size = new System.Drawing.Size(310, 24);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Erakusten ari diren bezeroak:";
+            this.label1.Text = "Erakusten ari diren bezero kopurua:";
             // 
             // BezeroChart
             // 
@@ -105,13 +110,15 @@ namespace VisualApp
             chartArea1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             chartArea1.Name = "BezeroChart";
             this.BezeroChart.ChartAreas.Add(chartArea1);
-            this.BezeroChart.Location = new System.Drawing.Point(-6, 64);
+            this.BezeroChart.Location = new System.Drawing.Point(0, 24);
             this.BezeroChart.Name = "BezeroChart";
+            this.BezeroChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            this.BezeroChart.PaletteCustomColors = new System.Drawing.Color[] {
+        System.Drawing.Color.Goldenrod};
             series1.ChartArea = "BezeroChart";
             series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.BrightPastel;
             this.BezeroChart.Series.Add(series1);
             this.BezeroChart.Size = new System.Drawing.Size(597, 376);
             this.BezeroChart.TabIndex = 0;
@@ -166,6 +173,7 @@ namespace VisualApp
             this.Name = "BezeroErosketak";
             this.Text = "BezeroErosketak";
             this.Load += new System.EventHandler(this.BezeroErosketak_Load);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Close);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ZematErakutsi)).EndInit();

@@ -39,11 +39,11 @@ namespace VisualApp
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(299, 118);
+            this.pictureBox1.Location = new System.Drawing.Point(296, 67);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(300, 137);
+            this.pictureBox1.Size = new System.Drawing.Size(328, 142);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -101,6 +101,7 @@ namespace VisualApp
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "MenuNagusia";
             this.Text = "MenuNagusia";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Close);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 

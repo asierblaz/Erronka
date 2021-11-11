@@ -40,6 +40,10 @@ namespace VisualApp
             hiru.Show();
             this.Hide();
         }
+        private void Form_Close(object sender, System.EventArgs e)
+        {
+            System.Windows.Forms.Application.Exit();
+        }
 
 
     }

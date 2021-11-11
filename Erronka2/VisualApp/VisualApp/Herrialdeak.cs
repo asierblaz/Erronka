@@ -43,7 +43,7 @@ namespace VisualApp
 
             EzezagunakKant.Text = Math.Round(ezezagunPortzentaia,2) + "% erosketa herrialde ezezagunetatik egin dira";
             ErosketaKopurua.Text = "Erosketa Kopurua: " + funtzio.getErosketaKopurua();
-          
+
 
 
 
@@ -51,11 +51,14 @@ namespace VisualApp
 
 
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void Form_Close(object sender, System.EventArgs e)
         {
             MenuNagusia menuNagusia = new MenuNagusia();
             menuNagusia.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
 
