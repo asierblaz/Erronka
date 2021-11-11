@@ -20,7 +20,6 @@ C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\bin\
 C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\Funciones.dll
 C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\Funciones.pdb
 C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\Funciones.dll.config
-C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.csproj.AssemblyReference.cache
 C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.Herrialdeak.resources
 C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.ProduktuSalduenak.resources
 C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.BezeroErosketak.resources
@@ -47,3 +46,4 @@ C:\Users\mantecon.julen\Documents\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug
 C:\Users\mantecon.julen\Documents\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.csproj.CopyComplete
 C:\Users\mantecon.julen\Documents\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.exe
 C:\Users\mantecon.julen\Documents\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.pdb
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.csproj.CopyComplete

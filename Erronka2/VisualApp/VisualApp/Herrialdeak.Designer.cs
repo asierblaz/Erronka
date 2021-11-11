@@ -35,7 +35,6 @@ namespace VisualApp
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Herrialdeak));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.HerrialdeChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.button1 = new System.Windows.Forms.Button();
             this.herrialdeakDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.herrialdeakDataSet1 = new VisualApp.HerrialdeakDataSet();
             this.herrialdeBistaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -44,6 +43,7 @@ namespace VisualApp
             this.EzezagunakKant = new System.Windows.Forms.Label();
             this.ErosketaKopurua = new System.Windows.Forms.Label();
             this.tituloLabel = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HerrialdeChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.herrialdeakDataSet1BindingSource)).BeginInit();
@@ -85,17 +85,6 @@ namespace VisualApp
             this.HerrialdeChart.Size = new System.Drawing.Size(577, 374);
             this.HerrialdeChart.TabIndex = 0;
             this.HerrialdeChart.Text = "chart1";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(2, 475);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 91);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "<";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // herrialdeakDataSet1BindingSource
             // 
@@ -154,16 +143,30 @@ namespace VisualApp
             this.tituloLabel.TabIndex = 6;
             this.tituloLabel.Text = "Gehien erosten duten herrialdeak";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(2, 475);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 91);
+            this.button1.TabIndex = 9;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Herrialdeak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(899, 598);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.tituloLabel);
             this.Controls.Add(this.ErosketaKopurua);
             this.Controls.Add(this.EzezagunakKant);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Herrialdeak";
             this.Text = "Herrialdeak";
@@ -184,7 +187,6 @@ namespace VisualApp
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataVisualization.Charting.Chart HerrialdeChart;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource herrialdeakDataSet1BindingSource;
         private HerrialdeakDataSet herrialdeakDataSet1;
         private HerrialdeakDataSet herrialdeakDataSet2;
@@ -193,5 +195,6 @@ namespace VisualApp
         private System.Windows.Forms.Label EzezagunakKant;
         private System.Windows.Forms.Label ErosketaKopurua;
         private System.Windows.Forms.Label tituloLabel;
+        private System.Windows.Forms.Button button1;
     }
 }

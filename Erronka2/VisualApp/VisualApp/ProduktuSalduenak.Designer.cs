@@ -29,9 +29,9 @@ namespace VisualApp
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProduktuSalduenak));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProduktuSalduenak));
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ProduktuChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -46,13 +46,16 @@ namespace VisualApp
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 470);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(-5, 486);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 91);
+            this.button1.Size = new System.Drawing.Size(133, 91);
             this.button1.TabIndex = 0;
-            this.button1.Text = "<";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
@@ -142,8 +145,8 @@ namespace VisualApp
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ProduktuSalduenak";
             this.Text = "Bat";
-            this.Load += new System.EventHandler(this.ProduktuSalduenak_Load);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Close);
+            this.Load += new System.EventHandler(this.ProduktuSalduenak_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ProduktuChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produktuSalduenakDataSet)).EndInit();

@@ -41,49 +41,62 @@ namespace VisualApp
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(296, 67);
+            this.pictureBox1.Location = new System.Drawing.Point(179, 29);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(328, 142);
+            this.pictureBox1.Size = new System.Drawing.Size(539, 229);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // batJoan
             // 
-            this.batJoan.BackColor = System.Drawing.Color.Black;
-            this.batJoan.Font = new System.Drawing.Font("MV Boli", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.batJoan.ForeColor = System.Drawing.Color.Goldenrod;
-            this.batJoan.Location = new System.Drawing.Point(46, 327);
+            this.batJoan.BackColor = System.Drawing.Color.Transparent;
+            this.batJoan.FlatAppearance.BorderSize = 0;
+            this.batJoan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.batJoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.batJoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.batJoan.Font = new System.Drawing.Font("MV Boli", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.batJoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(153)))), ((int)(((byte)(50)))));
+            this.batJoan.Image = ((System.Drawing.Image)(resources.GetObject("batJoan.Image")));
+            this.batJoan.Location = new System.Drawing.Point(73, 361);
             this.batJoan.Name = "batJoan";
-            this.batJoan.Size = new System.Drawing.Size(222, 182);
+            this.batJoan.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.batJoan.Size = new System.Drawing.Size(160, 148);
             this.batJoan.TabIndex = 1;
-            this.batJoan.Text = "Gehien erosten duten bezeroak";
             this.batJoan.UseVisualStyleBackColor = false;
             this.batJoan.Click += new System.EventHandler(this.batJoan_Click);
             // 
             // biJoan
             // 
-            this.biJoan.BackColor = System.Drawing.Color.Black;
-            this.biJoan.Font = new System.Drawing.Font("MV Boli", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.biJoan.ForeColor = System.Drawing.Color.Goldenrod;
-            this.biJoan.Location = new System.Drawing.Point(345, 327);
+            this.biJoan.BackColor = System.Drawing.Color.Transparent;
+            this.biJoan.FlatAppearance.BorderSize = 0;
+            this.biJoan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.biJoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.biJoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.biJoan.Font = new System.Drawing.Font("MV Boli", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.biJoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(153)))), ((int)(((byte)(50)))));
+            this.biJoan.Image = ((System.Drawing.Image)(resources.GetObject("biJoan.Image")));
+            this.biJoan.Location = new System.Drawing.Point(378, 361);
             this.biJoan.Name = "biJoan";
-            this.biJoan.Size = new System.Drawing.Size(217, 182);
+            this.biJoan.Size = new System.Drawing.Size(151, 148);
             this.biJoan.TabIndex = 2;
-            this.biJoan.Text = "Produktu salduenak";
             this.biJoan.UseVisualStyleBackColor = false;
             this.biJoan.Click += new System.EventHandler(this.biJoan_Click);
             // 
             // hiruJoan
             // 
-            this.hiruJoan.BackColor = System.Drawing.Color.Black;
-            this.hiruJoan.Font = new System.Drawing.Font("MV Boli", 21.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hiruJoan.ForeColor = System.Drawing.Color.Goldenrod;
-            this.hiruJoan.Location = new System.Drawing.Point(639, 327);
+            this.hiruJoan.BackColor = System.Drawing.Color.Transparent;
+            this.hiruJoan.FlatAppearance.BorderSize = 0;
+            this.hiruJoan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.hiruJoan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
+            this.hiruJoan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hiruJoan.Font = new System.Drawing.Font("MV Boli", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.hiruJoan.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(153)))), ((int)(((byte)(50)))));
+            this.hiruJoan.Image = ((System.Drawing.Image)(resources.GetObject("hiruJoan.Image")));
+            this.hiruJoan.Location = new System.Drawing.Point(680, 361);
             this.hiruJoan.Name = "hiruJoan";
-            this.hiruJoan.Size = new System.Drawing.Size(217, 182);
+            this.hiruJoan.Size = new System.Drawing.Size(151, 148);
             this.hiruJoan.TabIndex = 3;
-            this.hiruJoan.Text = "Gehien erosten duten herrialdeak";
             this.hiruJoan.UseVisualStyleBackColor = false;
             this.hiruJoan.Click += new System.EventHandler(this.hiruJoan_Click);
             // 
@@ -98,7 +111,8 @@ namespace VisualApp
             this.Controls.Add(this.biJoan);
             this.Controls.Add(this.batJoan);
             this.Controls.Add(this.pictureBox1);
-            this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "MenuNagusia";
             this.Text = "MenuNagusia";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Close);

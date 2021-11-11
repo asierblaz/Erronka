@@ -28,11 +28,6 @@ namespace VisualApp
             BezeroKopurua.Text = "Bezero Kopurua: " + f.getBezeroKopurua();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void BezeroErosketak_Load(object sender, EventArgs e)
         {
 
@@ -45,7 +40,6 @@ namespace VisualApp
             BezeroChart.Series[0].YValueMembers = "zenbat";
             BezeroChart.Series[0].XValueMember = "izena";
             BezeroChart.DataBind();
-
 
 
 
@@ -72,5 +66,10 @@ namespace VisualApp
             BezeroChart.DataBind();
         }
 
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+
+        }
     }
 }

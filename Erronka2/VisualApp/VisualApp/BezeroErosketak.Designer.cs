@@ -32,7 +32,6 @@ namespace VisualApp
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BezeroErosketak));
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ZematErakutsi = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,21 +39,11 @@ namespace VisualApp
             this.tituloLabel = new System.Windows.Forms.Label();
             this.ErosketaKopurua = new System.Windows.Forms.Label();
             this.BezeroKopurua = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ZematErakutsi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BezeroChart)).BeginInit();
             this.SuspendLayout();
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(12, 470);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(94, 91);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "<";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -157,6 +146,20 @@ namespace VisualApp
             this.BezeroKopurua.TabIndex = 4;
             this.BezeroKopurua.Text = "Bezero Kopurua: 10";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(-2, 473);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(133, 91);
+            this.button1.TabIndex = 8;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // BezeroErosketak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -164,16 +167,16 @@ namespace VisualApp
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(899, 598);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.BezeroKopurua);
             this.Controls.Add(this.tituloLabel);
             this.Controls.Add(this.ErosketaKopurua);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "BezeroErosketak";
             this.Text = "BezeroErosketak";
-            this.Load += new System.EventHandler(this.BezeroErosketak_Load);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Close);
+            this.Load += new System.EventHandler(this.BezeroErosketak_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ZematErakutsi)).EndInit();
@@ -184,8 +187,6 @@ namespace VisualApp
         }
 
         #endregion
-
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
 
         private System.Windows.Forms.DataVisualization.Charting.Chart BezeroChart;
@@ -194,6 +195,7 @@ namespace VisualApp
         private System.Windows.Forms.Label tituloLabel;
         private System.Windows.Forms.Label ErosketaKopurua;
         private System.Windows.Forms.Label BezeroKopurua;
+        private System.Windows.Forms.Button button1;
     }
 }
 
