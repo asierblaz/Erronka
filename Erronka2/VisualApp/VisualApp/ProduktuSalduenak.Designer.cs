@@ -70,6 +70,7 @@ namespace VisualApp
             this.ProduktuChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProduktuChart.BackColor = System.Drawing.Color.Transparent;
             chartArea1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
             chartArea1.Name = "BezeroaChart";
             this.ProduktuChart.ChartAreas.Add(chartArea1);
@@ -79,7 +80,8 @@ namespace VisualApp
             series1.ChartArea = "BezeroaChart";
             series1.Legend = "Legend1";
             series1.Name = "Series1";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series1.ShadowColor = System.Drawing.Color.Black;
             this.ProduktuChart.Series.Add(series1);
             this.ProduktuChart.Size = new System.Drawing.Size(593, 386);
             this.ProduktuChart.TabIndex = 0;
