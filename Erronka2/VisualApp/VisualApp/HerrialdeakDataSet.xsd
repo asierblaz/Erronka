@@ -186,6 +186,20 @@ FROM            Erosketa INNER JOIN
                     <CommandText>SELECT        Bezeroa.herrialdea, COUNT(Bezeroa.id) AS zenbat
 FROM            Erosketa INNER JOIN
                          Bezeroa ON Bezeroa.id = Erosketa.bezeroId
+WHERE        (Bezeroa.herrialdea &lt;&gt; 'Ezezaguna')
+GROUP BY Bezeroa.herrialdea
+ORDER BY zenbat DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="PatosDeGomaConnectionString (Settings)" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByEzezaguna" GeneratorSourceName="FillByEzezaguna" Modifier="Public" Name="FillByEzezaguna" QueryType="Scalar" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByEzezaguna" UserSourceName="FillByEzezaguna">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        COUNT(Bezeroa.id) AS zenbat
+FROM            Erosketa INNER JOIN
+                         Bezeroa ON Bezeroa.id = Erosketa.bezeroId
+WHERE        (Bezeroa.herrialdea = 'Ezezaguna')
 GROUP BY Bezeroa.herrialdea
 ORDER BY zenbat DESC</CommandText>
                     <Parameters />
@@ -202,7 +216,7 @@ ORDER BY zenbat DESC</CommandText>
   <xs:element name="HerrialdeakDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="HerrialdeakDataSet" msprop:Generator_UserDSName="HerrialdeakDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Bezeroa" msprop:Generator_TableClassName="BezeroaDataTable" msprop:Generator_TableVarName="tableBezeroa" msprop:Generator_RowChangedName="BezeroaRowChanged" msprop:Generator_TablePropName="Bezeroa" msprop:Generator_RowDeletingName="BezeroaRowDeleting" msprop:Generator_RowChangingName="BezeroaRowChanging" msprop:Generator_RowEvHandlerName="BezeroaRowChangeEventHandler" msprop:Generator_RowDeletedName="BezeroaRowDeleted" msprop:Generator_RowClassName="BezeroaRow" msprop:Generator_UserTableName="Bezeroa" msprop:Generator_RowEvArgName="BezeroaRowChangeEvent">
+        <xs:element name="Bezeroa" msprop:Generator_TableClassName="BezeroaDataTable" msprop:Generator_TableVarName="tableBezeroa" msprop:Generator_TablePropName="Bezeroa" msprop:Generator_RowDeletingName="BezeroaRowDeleting" msprop:Generator_RowChangingName="BezeroaRowChanging" msprop:Generator_RowEvHandlerName="BezeroaRowChangeEventHandler" msprop:Generator_RowDeletedName="BezeroaRowDeleted" msprop:Generator_UserTableName="Bezeroa" msprop:Generator_RowChangedName="BezeroaRowChanged" msprop:Generator_RowEvArgName="BezeroaRowChangeEvent" msprop:Generator_RowClassName="BezeroaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -237,7 +251,7 @@ ORDER BY zenbat DESC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Erosketa" msprop:Generator_TableClassName="ErosketaDataTable" msprop:Generator_TableVarName="tableErosketa" msprop:Generator_RowChangedName="ErosketaRowChanged" msprop:Generator_TablePropName="Erosketa" msprop:Generator_RowDeletingName="ErosketaRowDeleting" msprop:Generator_RowChangingName="ErosketaRowChanging" msprop:Generator_RowEvHandlerName="ErosketaRowChangeEventHandler" msprop:Generator_RowDeletedName="ErosketaRowDeleted" msprop:Generator_RowClassName="ErosketaRow" msprop:Generator_UserTableName="Erosketa" msprop:Generator_RowEvArgName="ErosketaRowChangeEvent">
+        <xs:element name="Erosketa" msprop:Generator_TableClassName="ErosketaDataTable" msprop:Generator_TableVarName="tableErosketa" msprop:Generator_TablePropName="Erosketa" msprop:Generator_RowDeletingName="ErosketaRowDeleting" msprop:Generator_RowChangingName="ErosketaRowChanging" msprop:Generator_RowEvHandlerName="ErosketaRowChangeEventHandler" msprop:Generator_RowDeletedName="ErosketaRowDeleted" msprop:Generator_UserTableName="Erosketa" msprop:Generator_RowChangedName="ErosketaRowChanged" msprop:Generator_RowEvArgName="ErosketaRowChangeEvent" msprop:Generator_RowClassName="ErosketaRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -251,7 +265,7 @@ ORDER BY zenbat DESC</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="HerrialdeBista" msprop:Generator_TableClassName="HerrialdeBistaDataTable" msprop:Generator_TableVarName="tableHerrialdeBista" msprop:Generator_TablePropName="HerrialdeBista" msprop:Generator_RowDeletingName="HerrialdeBistaRowDeleting" msprop:Generator_RowChangingName="HerrialdeBistaRowChanging" msprop:Generator_RowEvHandlerName="HerrialdeBistaRowChangeEventHandler" msprop:Generator_RowDeletedName="HerrialdeBistaRowDeleted" msprop:Generator_UserTableName="HerrialdeBista" msprop:Generator_RowChangedName="HerrialdeBistaRowChanged" msprop:Generator_RowEvArgName="HerrialdeBistaRowChangeEvent" msprop:Generator_RowClassName="HerrialdeBistaRow">
+        <xs:element name="HerrialdeBista" msprop:Generator_TableClassName="HerrialdeBistaDataTable" msprop:Generator_TableVarName="tableHerrialdeBista" msprop:Generator_RowChangedName="HerrialdeBistaRowChanged" msprop:Generator_TablePropName="HerrialdeBista" msprop:Generator_RowDeletingName="HerrialdeBistaRowDeleting" msprop:Generator_RowChangingName="HerrialdeBistaRowChanging" msprop:Generator_RowEvHandlerName="HerrialdeBistaRowChangeEventHandler" msprop:Generator_RowDeletedName="HerrialdeBistaRowDeleted" msprop:Generator_RowClassName="HerrialdeBistaRow" msprop:Generator_UserTableName="HerrialdeBista" msprop:Generator_RowEvArgName="HerrialdeBistaRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="bezeroId" msprop:Generator_ColumnVarNameInTable="columnbezeroId" msprop:Generator_ColumnPropNameInRow="bezeroId" msprop:Generator_ColumnPropNameInTable="bezeroIdColumn" msprop:Generator_UserColumnName="bezeroId" type="xs:int" minOccurs="0" />
@@ -278,7 +292,7 @@ ORDER BY zenbat DESC</CommandText>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FKcg1cbb9quu2bd40avfk4feo96" msdata:parent="Bezeroa" msdata:child="Erosketa" msdata:parentkey="id" msdata:childkey="bezeroId" msprop:Generator_UserChildTable="Erosketa" msprop:Generator_ChildPropName="GetErosketaRows" msprop:Generator_UserRelationName="FKcg1cbb9quu2bd40avfk4feo96" msprop:Generator_RelationVarName="relationFKcg1cbb9quu2bd40avfk4feo96" msprop:Generator_UserParentTable="Bezeroa" msprop:Generator_ParentPropName="BezeroaRow" />
+      <msdata:Relationship name="FKcg1cbb9quu2bd40avfk4feo96" msdata:parent="Bezeroa" msdata:child="Erosketa" msdata:parentkey="id" msdata:childkey="bezeroId" msprop:Generator_UserChildTable="Erosketa" msprop:Generator_ChildPropName="GetErosketaRows" msprop:Generator_UserRelationName="FKcg1cbb9quu2bd40avfk4feo96" msprop:Generator_ParentPropName="BezeroaRow" msprop:Generator_RelationVarName="relationFKcg1cbb9quu2bd40avfk4feo96" msprop:Generator_UserParentTable="Bezeroa" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

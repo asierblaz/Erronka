@@ -2796,7 +2796,7 @@ SELECT id, data, fakturatua, kantitatea, orderId, prezioTotala, bezeroId, produc
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        Erosketa.bezeroId, Bezeroa.herrialdea\r\nFROM            Erosketa INN" +
@@ -2804,10 +2804,20 @@ SELECT id, data, fakturatua, kantitatea, orderId, prezioTotala, bezeroId, produc
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
-            this._commandCollection[1].CommandText = "SELECT        Bezeroa.herrialdea, COUNT(Bezeroa.id) AS zenbat\r\nFROM            Er" +
-                "osketa INNER JOIN\r\n                         Bezeroa ON Bezeroa.id = Erosketa.bez" +
-                "eroId\r\nGROUP BY Bezeroa.herrialdea\r\nORDER BY zenbat DESC";
+            this._commandCollection[1].CommandText = @"SELECT        Bezeroa.herrialdea, COUNT(Bezeroa.id) AS zenbat
+FROM            Erosketa INNER JOIN
+                         Bezeroa ON Bezeroa.id = Erosketa.bezeroId
+WHERE        (Bezeroa.herrialdea <> 'Ezezaguna')
+GROUP BY Bezeroa.herrialdea
+ORDER BY zenbat DESC";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT        COUNT(Bezeroa.id) AS zenbat\r\nFROM            Erosketa INNER JOIN\r\n " +
+                "                        Bezeroa ON Bezeroa.id = Erosketa.bezeroId\r\nWHERE        " +
+                "(Bezeroa.herrialdea = \'Ezezaguna\')\r\nGROUP BY Bezeroa.herrialdea\r\nORDER BY zenbat" +
+                " DESC";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2856,6 +2866,34 @@ SELECT id, data, fakturatua, kantitatea, orderId, prezioTotala, bezeroId, produc
             HerrialdeakDataSet.HerrialdeBistaDataTable dataTable = new HerrialdeakDataSet.HerrialdeBistaDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual object FillByEzezaguna() {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            object returnValue;
+            try {
+                returnValue = command.ExecuteScalar();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            if (((returnValue == null) 
+                        || (returnValue.GetType() == typeof(global::System.DBNull)))) {
+                return null;
+            }
+            else {
+                return ((object)(returnValue));
+            }
         }
     }
     

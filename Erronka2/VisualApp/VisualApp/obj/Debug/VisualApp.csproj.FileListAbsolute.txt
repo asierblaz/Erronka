@@ -11,3 +11,22 @@ C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp
 C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.BezeroErosketak.resources
 C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.ProduktuSalduenak.resources
 C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.Herrialdeak.resources
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\Funciones.dll
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\Funciones.pdb
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\Funciones.dll.config
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\VisualApp.exe.config
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\VisualApp.exe
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\VisualApp.pdb
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\Funciones.dll
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\Funciones.pdb
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\bin\Debug\Funciones.dll.config
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.csproj.AssemblyReference.cache
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.Herrialdeak.resources
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.ProduktuSalduenak.resources
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.BezeroErosketak.resources
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.MenuNagusia.resources
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.Properties.Resources.resources
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.csproj.GenerateResource.cache
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.csproj.CoreCompileInputs.cache
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.exe
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\VisualApp\VisualApp\obj\Debug\VisualApp.pdb

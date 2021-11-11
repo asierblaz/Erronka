@@ -37,6 +37,8 @@ namespace VisualApp
             this.ProduktuChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.produktuSalduenakDataSet = new VisualApp.ProduktuSalduenaDataSet();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.tituloLabel = new System.Windows.Forms.Label();
+            this.ProduktuKopurua = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProduktuChart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produktuSalduenakDataSet)).BeginInit();
@@ -57,7 +59,7 @@ namespace VisualApp
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.groupBox1.Controls.Add(this.ProduktuChart);
-            this.groupBox1.Location = new System.Drawing.Point(166, 81);
+            this.groupBox1.Location = new System.Drawing.Point(168, 145);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(593, 394);
             this.groupBox1.TabIndex = 1;
@@ -91,13 +93,37 @@ namespace VisualApp
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(736, 415);
+            this.checkBox1.BackColor = System.Drawing.Color.Transparent;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(600, 119);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(110, 17);
+            this.checkBox1.Size = new System.Drawing.Size(177, 28);
             this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Kategoriaz Filtratu";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.UseVisualStyleBackColor = false;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.KategoriazFiltratu);
+            // 
+            // tituloLabel
+            // 
+            this.tituloLabel.AutoSize = true;
+            this.tituloLabel.BackColor = System.Drawing.Color.Transparent;
+            this.tituloLabel.Font = new System.Drawing.Font("Courier New", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tituloLabel.Location = new System.Drawing.Point(268, 28);
+            this.tituloLabel.Name = "tituloLabel";
+            this.tituloLabel.Size = new System.Drawing.Size(414, 41);
+            this.tituloLabel.TabIndex = 8;
+            this.tituloLabel.Text = "Produktu Salduenak";
+            // 
+            // ProduktuKopurua
+            // 
+            this.ProduktuKopurua.AutoSize = true;
+            this.ProduktuKopurua.BackColor = System.Drawing.SystemColors.Window;
+            this.ProduktuKopurua.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProduktuKopurua.Location = new System.Drawing.Point(48, 123);
+            this.ProduktuKopurua.Name = "ProduktuKopurua";
+            this.ProduktuKopurua.Size = new System.Drawing.Size(182, 24);
+            this.ProduktuKopurua.TabIndex = 9;
+            this.ProduktuKopurua.Text = "Produktu Kopurua: 8";
             // 
             // ProduktuSalduenak
             // 
@@ -106,6 +132,8 @@ namespace VisualApp
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(899, 598);
+            this.Controls.Add(this.ProduktuKopurua);
+            this.Controls.Add(this.tituloLabel);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -129,6 +157,8 @@ namespace VisualApp
         private System.Windows.Forms.DataVisualization.Charting.Chart ProduktuChart;
         private ProduktuSalduenaDataSet produktuSalduenakDataSet;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label tituloLabel;
+        private System.Windows.Forms.Label ProduktuKopurua;
     }
 }
 

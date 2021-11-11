@@ -40,5 +40,7 @@ namespace VisualApp
             hiru.Show();
             this.Hide();
         }
+
+
     }
 }

@@ -1,0 +1,9 @@
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\Funciones\Funciones\bin\Debug\Funciones.dll.config
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\Funciones\Funciones\bin\Debug\Funciones.dll
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\Funciones\Funciones\bin\Debug\Funciones.pdb
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\Funciones\Funciones\obj\Debug\Funciones.csproj.AssemblyReference.cache
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\Funciones\Funciones\obj\Debug\Funciones.Funtzioak.resources
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\Funciones\Funciones\obj\Debug\Funciones.csproj.GenerateResource.cache
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\Funciones\Funciones\obj\Debug\Funciones.csproj.CoreCompileInputs.cache
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\Funciones\Funciones\obj\Debug\Funciones.dll
+C:\Users\blazquez.asier\Documents\DAM2\Erronka\Erronka2\Funciones\Funciones\obj\Debug\Funciones.pdb

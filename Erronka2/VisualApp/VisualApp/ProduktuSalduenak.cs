@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Funciones;
 
 namespace VisualApp
 {
@@ -14,7 +15,7 @@ namespace VisualApp
     {
         ProduktuSalduenaDataSet produktuSalduenakDataSet1 = new ProduktuSalduenaDataSet();
         ProduktuSalduenaDataSetTableAdapters.ProduktuBistaTableAdapter produktuBistaTableAdapter = new ProduktuSalduenaDataSetTableAdapters.ProduktuBistaTableAdapter();
-
+        Funtzioak f = new Funtzioak();
 
         public ProduktuSalduenak()
         {
@@ -23,6 +24,9 @@ namespace VisualApp
 
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+
+            ProduktuKopurua.Text = "Produktu Kopurua: " + f.getproduktuKantitatea();
+           
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,5 +78,7 @@ namespace VisualApp
                 ProduktuChart.DataBind();
             }
         }
+
+
     }
 }

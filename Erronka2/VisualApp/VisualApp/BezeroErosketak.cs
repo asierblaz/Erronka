@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Funciones;
 namespace VisualApp
 {
     public partial class BezeroErosketak : Form
@@ -15,7 +15,7 @@ namespace VisualApp
         BezeroErosketakDataSet bezeroErosketakDataSet = new BezeroErosketakDataSet();
         BezeroErosketakDataSetTableAdapters.BezeroBistaTableAdapter bezeroBistaTableAdapter = new BezeroErosketakDataSetTableAdapters.BezeroBistaTableAdapter();
 
-
+        Funtzioak f = new Funtzioak();
 
         public BezeroErosketak()
         {
@@ -24,6 +24,8 @@ namespace VisualApp
 
             this.FormBorderStyle = FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
+            ErosketaKopurua.Text = "Erosketa Kopurua: " + f.getErosketaKopurua();
+            BezeroKopurua.Text = "Bezero Kopurua: " + f.getBezeroKopurua();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -64,5 +66,7 @@ namespace VisualApp
             BezeroChart.Series[0].XValueMember = "izena";
             BezeroChart.DataBind();
         }
+
+ 
     }
 }
