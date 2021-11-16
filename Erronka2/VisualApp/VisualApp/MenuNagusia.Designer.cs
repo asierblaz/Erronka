@@ -102,8 +102,8 @@ namespace VisualApp
             // 
             // MenuNagusia
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(899, 598);
@@ -113,7 +113,9 @@ namespace VisualApp
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuNagusia";
+            this.ShowIcon = false;
             this.Text = "MenuNagusia";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Close);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
