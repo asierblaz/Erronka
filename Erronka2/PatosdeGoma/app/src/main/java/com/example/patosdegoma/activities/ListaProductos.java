@@ -77,7 +77,6 @@ public class ListaProductos extends AppCompatActivity {
             ((TextView)findViewById(R.id.ProdList2)).setText(getResources().getIdentifier("@string/" + MainActivity.lang + "_ProdList", null, getPackageName()));
             ((MenuItem)findViewById(R.id.MenuBilatu)).setTitle(getResources().getIdentifier("@string/"+MainActivity.lang+"_MenuBilatu",null,getPackageName()));
         }catch(Exception e){
-            Log.d("String", "@string/" + MainActivity.lang + "_ProdList");
             Log.d("String", e.getMessage());
         }
     }

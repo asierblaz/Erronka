@@ -119,75 +119,110 @@ public class DataConnect extends Thread {
                 );
                 Produktua.produktuak.add(p);
             }
-            //Kategoriak Produktua klasean dagoen categorias ArrayList-ean gordetzen diraa
+            //Kategoriak Produktua klasean dagoen categorias ArrayList-ean gordetzen dira
             Produktua.categoriasToArray();
+            //Konexioa ixten da
             conn.close();
+        //Salbuespena
         } catch (Exception e) {
             Log.d("Exception", "run: Failed " + e.getMessage());
         }
     });
 
+    //Bezeroen lista hartzen duen haria
     static Thread BezeroakQuery = new Thread(() ->
     {
+        //Bezeroak hartzeko saiakera egiten du
         try {
+            //Query-a
             String query = "select id, name from res_partner where user_id = 12";
+            //Connect() funtzioari deitzen zaio konexioa gordetzeko
             Connection conn = Connect();
+            //Query-a gorde eta exekutatzen da
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
+            //Hemen bueltatutako bezero guztiak Bezeroa klasean dagoen bezeroak ArrayList-ean gordetzen dira
             while (rs.next()) {
                 Bezeroa b = new Bezeroa(
                         rs.getInt(1), rs.getString(2)
                 );
                 Bezeroa.bezeroak.add(b);
             }
+            //Konexioa ixten da
             conn.close();
+            //Salbuespena
         } catch (Exception e) {
             Log.d("Exception", "run: Failed " + e.getMessage());
         }
     });
 
+    //sale_order taulako azken Id-a hartzen duen haria
     static Thread SoIdQuery = new Thread(() ->
     {
+        //Id-a hartzeko saiakera egiten du
         try {
+            //Query-a
             String query = "select MAX(id) from sale_order";
+            //Connect() funtzioari deitzen zaio konexioa gordetzeko
             Connection conn = Connect();
+            //Query-a gorde eta exekutatzen da
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
+            /*
+            Hemen bueltatutako id-ari 1 gehitzen zaio eta CrearPedido klasean dagoen so_id aldagaian gordetzen da.
+            Salmenta egiteko beharrezkoa den salmenta izena era sortzen da eta CrearPedido klasean dagoen so_name aldagaian gordetzen da.
+            */
             while (rs.next()) {
                 CrearPedido.so_id = rs.getInt(1)+1;
                 CrearPedido.so_name = "S000" + CrearPedido.so_id;
             }
+            //Konexioa ixten da
             conn.close();
+            //Salbuespena
         } catch (Exception e) {
             Log.d("Exception", "run: Failed " + e.getMessage());
         }
     });
 
+    //sale_order_line taulako azken Id-a hartzen duen haria
     static Thread SolIdQuery = new Thread(() ->
     {
+        //Id-a hartzeko saiakera egiten du
         try {
+            //Query-a
             String query = "select MAX(id) from sale_order_line";
+            //Connect() funtzioari deitzen zaio konexioa gordetzeko
             Connection conn = Connect();
+            //Query-a gorde eta exekutatzen da
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
+            //Hemen bueltatutako id-ari 1 gehitzen zaio eta CrearPedido klasean dagoen sol_id aldagaian gordetzen da.
             while (rs.next()) {
                 CrearPedido.sol_id = rs.getInt(1)+1;
             }
+            //Konexioa ixten da
             conn.close();
+            //Salbuespena
         } catch (Exception e) {
             Log.d("Exception", "run: Failed " + e.getMessage());
         }
     });
 
+    //Salmenten lista hartzen duen haria
     static Thread SalmentakQuery = new Thread(() ->
     {
+        //Salmentak hartzeko saiakera egiten du
         try {
+            //Query-a
             String query = "Select id, name, state, date_order, create_date, partner_id, " +
                     "invoice_status, amount_untaxed, amount_tax, amount_total from sale_order " +
                     "order by name desc";
+            //Connect() funtzioari deitzen zaio konexioa gordetzeko
             Connection conn = Connect();
+            //Query-a gorde eta exekutatzen da
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
+            //Hemen bueltatutako produktu guztiak Salmenta klasean dagoen salmentak ArrayList-ean gordetzen dira
             while (rs.next()) {
                 Salmenta s = new Salmenta(
                         rs.getInt(1), rs.getString(2), rs.getString(3),
@@ -198,49 +233,63 @@ public class DataConnect extends Thread {
                 );
                 Salmenta.salmentak.add(s);
             }
+            //Konexioa ixten da
             conn.close();
+            //Salbuespena
         } catch (Exception e) {
             Log.d("Exception", "run: Failed"+ e.getMessage());
         }
     });
 
-    //Thread que inserta un pedido
+    //Salmenta sortzen duen haria
     static Thread InsertOrderQuery = new Thread(() ->
     {
-        String query = "insert into sale_order(id, require_signature, require_payment, partner_id," +
-                "partner_invoice_id, partner_shipping_id, pricelist_id, currency_id," +
-                "name, state, date_order, create_date, invoice_status," +
-                "amount_untaxed, amount_tax, amount_total, currency_rate, company_id, team_id, " +
-                "create_uid, write_uid, write_date, picking_policy, warehouse_id)" +
-                "values (" + CrearPedido.so_id + ", true, false, " + CrearPedido.partner_id + ", " + CrearPedido.partner_id + ", " +
-                CrearPedido.partner_id + ", 1 , 1, '" + CrearPedido.so_name + "','draft', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, " +
-                "'no', " + CrearPedido.so_amount + ", 0, " + CrearPedido.so_amount + ", 1, 1, 1, 2, 2, " +
+        //Query-a
+        String query = "insert into sale_order(id, require_signature, require_payment, " +
+                "partner_id, partner_invoice_id, partner_shipping_id, pricelist_id, currency_id," +
+                "name, state, date_order, create_date, invoice_status, amount_untaxed, " +
+                "amount_tax, amount_total, currency_rate, company_id, team_id, create_uid, " +
+                "write_uid, write_date, picking_policy, warehouse_id)" +
+                "values (" + CrearPedido.so_id + ", true, false, " + CrearPedido.partner_id + ", " +
+                CrearPedido.partner_id + ", " + CrearPedido.partner_id + ", 1 , 1, '" +
+                CrearPedido.so_name + "','draft', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, 'no', " +
+                CrearPedido.so_amount + ", 0, " + CrearPedido.so_amount + ", 1, 1, 1, 2, 2, " +
                 "CURRENT_TIMESTAMP, 'direct', 1)";
-
+        //Salmenta sortzeko saiakera
         try {
+            //Semaforora sartzen da
             CrearPedido.pedido.acquire();
+            //Salmenta-ren query-a exekutatzen saiatzen da
             try {
-                Log.d("SO_Query", query);
-                Connection conn = DataConnect.Connect();
+                //Connect() funtzioari deitzen zaio konexioa gordetzeko
+                Connection conn = Connect();
+                //Query-a gorde eta exekutatzen da
                 Statement st = conn.createStatement();
                 st.executeUpdate(query);
+                //Konexioa ixten da
                 conn.close();
             } finally {
+                //Semaforotik irtetzen da
                 CrearPedido.pedido.release();
             }
+        //Salbuespena
         } catch (Exception e) {
             Log.d("InsertOrderQuery", e.getMessage());
         }
     });
 
-    //Thread que inserta las lineas de pedido
+    //Salmenta lerroa(k) sortzen dituen haria
     static Thread InsertLineQuery = new Thread(() ->
     {
         try {
+            //Semaforora sartzen da eta salmenta lerroa(k) sortzeko saiakera
             CrearPedido.pedido.acquire();
             try {
+                //Connect() funtzioari deitzen zaio konexioa gordetzeko
                 Connection conn = DataConnect.Connect();
+                //Lerro bakoitzeko insert bat egiten da
                 for (ProductoCarrito p : ProductoCarrito.carrito) {
+                    //Query-a
                     String query = "insert into sale_order_line(id, order_id, name, sequence, invoice_status, " +
                             "price_unit, price_tax, price_subtotal, price_total, price_reduce, price_reduce_taxinc, " +
                             "price_reduce_taxexcl, discount, product_id, product_uom, product_uom_qty, " +
@@ -255,19 +304,21 @@ public class DataConnect extends Thread {
                             p.getCantidad() + ", 'stock_move', 0, 0, 0, 0, 0, " + p.getPrecio() +
                             ", 1, 1, " + CrearPedido.partner_id + ", 'draft', 0, 2, CURRENT_TIMESTAMP, 2, " +
                             "CURRENT_TIMESTAMP)";
-                    Log.d("SOL_Query", query);
+                    //Query-a gorde eta exekutatzen da
                     Statement st = conn.createStatement();
                     st.executeUpdate(query);
-                    CrearPedido.sol_id -= -1;
+                    //Erabilitako id-ari 1 gehitzen zaio eta CrearPedido klasean dagoen sol_id aldagaian gordetzen da.
+                    CrearPedido.sol_id -=- 1;
                 }
             } finally {
+                //Semaforotik irtetzen da eta saskia huzten du
                 CrearPedido.pedido.release();
                 ProductoCarrito.carrito.clear();
             }
+        //Salbuespena
         } catch (Exception e) {
             Log.d("InsertLineQuery", e.getMessage());
             e.printStackTrace();
         }
-
     });
 }
