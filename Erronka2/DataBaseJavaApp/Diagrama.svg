@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="88cm" height="44cm" viewBox="-2660 -730 1747 875" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="-1701.71" y="-435.398" width="787.754" height="527.038"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1701.71" y="-435.398" width="787.754" height="527.038"/>
+      <rect style="fill: #ffffff" x="-1701.71" y="-455.398" width="119.5" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1701.71" y="-455.398" width="119.5" height="20"/>
+      <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1699.71" y="-441.398">model.sqlserver</text>
+    </g>
+    <g>
+      <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="-1173.67,-553.966 -1173.67,-357.302 -1503.88,-357.302 -1503.88,-158.403 "/>
+      <polygon style="fill: #ffffff" points="-1165.67,-553.966 -1173.67,-569.966 -1181.67,-553.966 "/>
+      <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-1165.67,-553.966 -1173.67,-569.966 -1181.67,-553.966 "/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-1682.13" y="-158.403" width="356.5" height="44"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1682.13" y="-158.403" width="356.5" height="44"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="-1503.88" y="-143.203">&lt;&lt;@Entity&gt;&gt;</text>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-1503.88" y="-122.403">Erosketa</text>
+      <rect style="fill: #ffffff" x="-1682.13" y="-114.403" width="356.5" height="116"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1682.13" y="-114.403" width="356.5" height="116"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1679.13" y="-101.203">-id: int</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1679.13" y="-85.2028">-data: Date</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1679.13" y="-69.2028">-fakturatua: boolean</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1679.13" y="-53.2028">-orderId: int</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1679.13" y="-37.2028">-prezioTotala: float</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1679.13" y="-21.2028">-produktua: Produktua</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1679.13" y="-5.2028">-bezeroa: Bezeroa</text>
+      <rect style="fill: #ffffff" x="-1682.13" y="1.5972" width="356.5" height="84"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1682.13" y="1.5972" width="356.5" height="84"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1679.13" y="14.7972">+Erosketa(id:id,data:Date,fakturatua:boolean,</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1679.13" y="30.7972">          orderId:int,prezioTotala:float)</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1679.13" y="46.7972">+Erosketa()</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1679.13" y="62.7972">+getters()</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1679.13" y="78.7972">+setters()</text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-1691.32" y="-420.242" width="379.6" height="44"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1691.32" y="-420.242" width="379.6" height="44"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="-1501.52" y="-405.042">&lt;&lt;@Entity&gt;&gt;</text>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-1501.52" y="-384.242">Produktua</text>
+      <rect style="fill: #ffffff" x="-1691.32" y="-376.242" width="379.6" height="100"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1691.32" y="-376.242" width="379.6" height="100"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1688.32" y="-363.042">-id: int</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1688.32" y="-347.042">-categoria: String</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1688.32" y="-331.042">-imagen: String</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1688.32" y="-315.042">-name: String</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1688.32" y="-299.042">-prezioa: float</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1688.32" y="-283.042">-erosketas: List&lt;Erosketa&gt;</text>
+      <rect style="fill: #ffffff" x="-1691.32" y="-276.242" width="379.6" height="116"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1691.32" y="-276.242" width="379.6" height="116"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1688.32" y="-263.042">+Produktua(id:id,categoria:String,imagen:String,</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1688.32" y="-247.042">           prezioa:float)</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1688.32" y="-231.042">+Produktua()</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1688.32" y="-215.042">+getters()</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1688.32" y="-199.042">+setters()</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1688.32" y="-183.042">+addErosketa(erosketa:Erosketa): Erosketa</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1688.32" y="-167.042">+removeErosketa(erosketa:Erosketa): Erosketa</text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-1291.83" y="-166.064" width="364.2" height="44"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1291.83" y="-166.064" width="364.2" height="44"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="-1109.73" y="-150.864">&lt;&lt;@Entity&gt;&gt;</text>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-1109.73" y="-130.064">Bezeroa</text>
+      <rect style="fill: #ffffff" x="-1291.83" y="-122.064" width="364.2" height="100"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1291.83" y="-122.064" width="364.2" height="100"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1288.83" y="-108.864">-id: int</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1288.83" y="-92.8644">-email: String</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1288.83" y="-76.8644">-herrialdea: String</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1288.83" y="-60.8644">-izena: String</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1288.83" y="-44.8644">-telefonoa: float</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1288.83" y="-28.8644">-erosketas: List&lt;Erosketa&gt;</text>
+      <rect style="fill: #ffffff" x="-1291.83" y="-22.0644" width="364.2" height="116"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1291.83" y="-22.0644" width="364.2" height="116"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1288.83" y="-8.8644">+Bezeroa(id:id,email:String,herrialdea:String,</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1288.83" y="7.1356">         izena:float,telefonoa:String)</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1288.83" y="23.1356">+Bezeroa()</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1288.83" y="39.1356">+getters()</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1288.83" y="55.1356">+setters()</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1288.83" y="71.1356">+addErosketa(erosketa:Erosketa): Erosketa</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1288.83" y="87.1356">+removeErosketa(erosketa:Erosketa): Erosketa</text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-1228.72" y="-632.202" width="110.1" height="44"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1228.72" y="-632.202" width="110.1" height="44"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="-1173.67" y="-617.002">&lt;&lt;Interface&gt;&gt;</text>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-1173.67" y="-596.202">Serializable</text>
+      <rect style="fill: #ffffff" x="-1228.72" y="-588.202" width="110.1" height="8"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1228.72" y="-588.202" width="110.1" height="8"/>
+      <rect style="fill: #ffffff" x="-1228.72" y="-580.202" width="110.1" height="8"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1228.72" y="-580.202" width="110.1" height="8"/>
+    </g>
+    <g>
+      <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="-1173.67,-553.966 -1173.67,-361.133 -1109.73,-361.133 -1109.73,-166.064 "/>
+      <polygon style="fill: #ffffff" points="-1165.67,-553.966 -1173.67,-569.966 -1181.67,-553.966 "/>
+      <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-1165.67,-553.966 -1173.67,-569.966 -1181.67,-553.966 "/>
+    </g>
+    <g>
+      <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 8; stroke: #000000" points="-1173.67,-553.966 -1173.67,-488.222 -1501.52,-488.222 -1501.52,-420.242 "/>
+      <polygon style="fill: #ffffff" points="-1165.67,-553.966 -1173.67,-569.966 -1181.67,-553.966 "/>
+      <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="-1165.67,-553.966 -1173.67,-569.966 -1181.67,-553.966 "/>
+    </g>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="-2658.33" y="-703.3" width="945.639" height="579.642"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2658.33" y="-703.3" width="945.639" height="579.642"/>
+      <rect style="fill: #ffffff" x="-2658.33" y="-723.3" width="88.7" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2658.33" y="-723.3" width="88.7" height="20"/>
+      <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2656.33" y="-709.3">eus.uni.dam</text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-2638.23" y="-472.364" width="333.4" height="28"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2638.23" y="-472.364" width="333.4" height="28"/>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-2471.53" y="-452.364">ControllerPostgres</text>
+      <rect style="fill: #ffffff" x="-2638.23" y="-444.364" width="333.4" height="36"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2638.23" y="-444.364" width="333.4" height="36"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2635.23" y="-431.164">+appContext: AplicationContext</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2635.23" y="-415.164">+postgresDao: PostgresDao</text>
+      <rect style="fill: #ffffff" x="-2638.23" y="-408.364" width="333.4" height="68"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2638.23" y="-408.364" width="333.4" height="68"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2635.23" y="-395.164">+produktuakToList(): List&lt;ProductTemplate&gt;</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2635.23" y="-379.164">+bezeroakToList(): List&lt;ResPartner&gt;</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2635.23" y="-363.164">+erosketakToList(): List&lt;SaleOrderLine&gt;</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2635.23" y="-347.164">+closeContext(): void</text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-2268.75" y="-315.96" width="541.3" height="28"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2268.75" y="-315.96" width="541.3" height="28"/>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-1998.1" y="-295.96">PostgresDatuBasearenKonfigurazioa</text>
+      <rect style="fill: #ffffff" x="-2268.75" y="-287.96" width="541.3" height="52"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2268.75" y="-287.96" width="541.3" height="52"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2265.75" y="-274.76">-env: Enviroment</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2265.75" y="-258.76">+dataSource: DataSource</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2265.75" y="-242.76">-entityManagerFactory: LocalContainerEntityManagerFactoryBean</text>
+      <rect style="fill: #ffffff" x="-2268.75" y="-235.96" width="541.3" height="84"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2268.75" y="-235.96" width="541.3" height="84"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2265.75" y="-222.76">+dataSource(): DataSource</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2265.75" y="-206.76">+entityManagerFactory(): LocalContainerEntityManagerFactoryBean</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2265.75" y="-190.76">+transactionManager(): JpaTransactionManager</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2265.75" y="-174.76">+exceptionTranslation(): PersistenceExceptionTranslationPostProcessor</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2265.75" y="-158.76">+getSqlserverDao(): JpaTransactionManager</text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-2280.43" y="-495.164" width="541.3" height="28"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2280.43" y="-495.164" width="541.3" height="28"/>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-2009.78" y="-475.164">SqlServerDatuBasearenKonfigurazioa</text>
+      <rect style="fill: #ffffff" x="-2280.43" y="-467.164" width="541.3" height="52"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2280.43" y="-467.164" width="541.3" height="52"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2277.43" y="-453.964">-env: Enviroment</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2277.43" y="-437.964">+dataSource: DataSource</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2277.43" y="-421.964">-entityManagerFactory: LocalContainerEntityManagerFactoryBean</text>
+      <rect style="fill: #ffffff" x="-2280.43" y="-415.164" width="541.3" height="84"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2280.43" y="-415.164" width="541.3" height="84"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2277.43" y="-401.964">+dataSource(): DataSource</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2277.43" y="-385.964">+entityManagerFactory(): LocalContainerEntityManagerFactoryBean</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2277.43" y="-369.964">+transactionManager(): JpaTransactionManager</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2277.43" y="-353.964">+exceptionTranslation(): PersistenceExceptionTranslationPostProcessor</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2277.43" y="-337.964">+getSqlserverDao(): JpaTransactionManager</text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-2322.95" y="-681.308" width="433.5" height="28"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2322.95" y="-681.308" width="433.5" height="28"/>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-2106.2" y="-661.308">ControllerSqlServer</text>
+      <rect style="fill: #ffffff" x="-2322.95" y="-653.308" width="433.5" height="36"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2322.95" y="-653.308" width="433.5" height="36"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2319.95" y="-640.108">+appContext: AplicationContext</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2319.95" y="-624.108">+sqlServerDao: SqlServerDao</text>
+      <rect style="fill: #ffffff" x="-2322.95" y="-617.308" width="433.5" height="116"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2322.95" y="-617.308" width="433.5" height="116"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2319.95" y="-604.108">+produktuakToDB(produktuak:List&lt;ProductTemplate&gt;)</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2319.95" y="-588.108">+bezeroakToDB(bezeroak:List&lt;ResPartner&gt;): void</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2319.95" y="-572.108">+erosketakToDB(erosketak:List&lt;SaleOrderLine&gt;): void</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2319.95" y="-556.108">+erosketakXBainoGutxiago(erosketak:List&lt;SaleOrderLine&gt;,</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2319.95" y="-540.108">                         kantitatea:int): void</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2319.95" y="-524.108">+deleteErosketaGuztiak(): void</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2319.95" y="-508.108">+closeContext(): void</text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-2629.43" y="-671.902" width="271.8" height="28"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2629.43" y="-671.902" width="271.8" height="28"/>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-2493.53" y="-651.902">Main</text>
+      <rect style="fill: #ffffff" x="-2629.43" y="-643.902" width="271.8" height="84"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2629.43" y="-643.902" width="271.8" height="84"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2626.43" y="-630.702">-cs: ControllerSqlServer</text>
+      <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-2626.43" y1="-624.302" x2="-2441.63" y2="-624.302"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2626.43" y="-614.702">-cp: ControllerPostgres</text>
+      <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-2626.43" y1="-608.302" x2="-2449.33" y2="-608.302"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2626.43" y="-598.702">-produktuak: List&lt;ProductTemplate&gt;</text>
+      <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-2626.43" y1="-592.302" x2="-2364.63" y2="-592.302"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2626.43" y="-582.702">-bezeroak: List&lt;ResPartner&gt;</text>
+      <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-2626.43" y1="-576.302" x2="-2418.53" y2="-576.302"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2626.43" y="-566.702">-erosketak: List&lt;SaleOrderLine&gt;</text>
+      <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-2626.43" y1="-560.302" x2="-2387.73" y2="-560.302"/>
+      <rect style="fill: #ffffff" x="-2629.43" y="-559.902" width="271.8" height="68"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2629.43" y="-559.902" width="271.8" height="68"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2626.43" y="-546.702">+main(args:String[]): void</text>
+      <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-2626.43" y1="-545.102" x2="-2426.23" y2="-545.102"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2626.43" y="-530.702">+datuakInportatu(): void</text>
+      <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-2626.43" y1="-529.102" x2="-2441.63" y2="-529.102"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2626.43" y="-514.702">+datuakEsportatu()</text>
+      <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-2626.43" y1="-513.102" x2="-2487.83" y2="-513.102"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2626.43" y="-498.702">+addToLog(s:String): void</text>
+      <line style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" x1="-2626.43" y1="-497.102" x2="-2433.93" y2="-497.102"/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-2638.15" y="-316.792" width="348.8" height="28"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2638.15" y="-316.792" width="348.8" height="28"/>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-2463.75" y="-296.792">ControllerXML</text>
+      <rect style="fill: #ffffff" x="-2638.15" y="-288.792" width="348.8" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2638.15" y="-288.792" width="348.8" height="20"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2635.15" y="-275.592">-fitxategia: String = options.xml</text>
+      <rect style="fill: #ffffff" x="-2638.15" y="-268.792" width="348.8" height="84"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2638.15" y="-268.792" width="348.8" height="84"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2635.15" y="-255.592">+createXML(): void</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2635.15" y="-239.592">+addToLogXML(TipoAccesso:String): void</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2635.15" y="-223.592">+irakurriLoga(): String</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2635.15" y="-207.592">+gerProduktuKantitateaXml(): int</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2635.15" y="-191.592">+serProduktuKantitatea(kantitatea:int): void</text>
+      <rect style="fill: #ffffff" x="-2335.35" y="-318.792" width="54" height="8"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 6; stroke: #000000" x="-2335.35" y="-318.792" width="54" height="8"/>
+    </g>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="-2130.48" y="-95.9694" width="411.84" height="155.396"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2130.48" y="-95.9694" width="411.84" height="155.396"/>
+      <rect style="fill: #ffffff" x="-2130.48" y="-115.969" width="104.1" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2130.48" y="-115.969" width="104.1" height="20"/>
+      <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2128.48" y="-101.969">repo.postgres</text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-2121.06" y="-84.5124" width="387.3" height="44"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2121.06" y="-84.5124" width="387.3" height="44"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="-1927.41" y="-69.3124">&lt;&lt;Repository&gt;&gt;</text>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-1927.41" y="-48.5124">PostgresDao</text>
+      <rect style="fill: #ffffff" x="-2121.06" y="-40.5124" width="387.3" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2121.06" y="-40.5124" width="387.3" height="20"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2118.06" y="-27.3124">-entityManager: EntityManager</text>
+      <rect style="fill: #ffffff" x="-2121.06" y="-20.5124" width="387.3" height="68"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2121.06" y="-20.5124" width="387.3" height="68"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2118.06" y="-7.3124">+getAllProductTemplates(): List&lt;ProductTemplate&gt;</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2118.06" y="8.6876">+getAllProductCategories(): List&lt;ProductCategory&gt;</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2118.06" y="24.6876">+getAllResPartners(): List&lt;ResPartner&gt;</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2118.06" y="40.6876">+getAllSaleOrderLines(): List&lt;SaleOrderLine&gt;</text>
+    </g>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="-2603.5" y="-93.457" width="351.489" height="238.169"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2603.5" y="-93.457" width="351.489" height="238.169"/>
+      <rect style="fill: #ffffff" x="-2603.5" y="-113.457" width="111.8" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2603.5" y="-113.457" width="111.8" height="20"/>
+      <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2601.5" y="-99.457">repo.sqlserver</text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-2591.54" y="-81.3142" width="325.7" height="44"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2591.54" y="-81.3142" width="325.7" height="44"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="-2428.69" y="-66.1142">&lt;&lt;Repository&gt;&gt;</text>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-2428.69" y="-45.3142">SqlServerDao</text>
+      <rect style="fill: #ffffff" x="-2591.54" y="-37.3142" width="325.7" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2591.54" y="-37.3142" width="325.7" height="20"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2588.54" y="-24.1142">-entityManager: EntityManager</text>
+      <rect style="fill: #ffffff" x="-2591.54" y="-17.3142" width="325.7" height="148"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-2591.54" y="-17.3142" width="325.7" height="148"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2588.54" y="-4.1142">+createProduktua(product:Produktua): void</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2588.54" y="11.8858">+updateProduktua(product:Produktua): void</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2588.54" y="27.8858">+createBezeroa(bezeroa:Bezeroa): void</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2588.54" y="43.8858">+updateBezeroa(bezeroa:Bezeroa): void</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2588.54" y="59.8858">+createErosketa(erosketa:Erosketa): void</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2588.54" y="75.8858">+updateErosketa(erosketa:Erosketa): void</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2588.54" y="91.8858">+deleteAllErosketak(): void</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2588.54" y="107.886">+getProduktuaById(id:int): Produktua</text>
+      <text font-size="12.8" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-2588.54" y="123.886">+getBezeroaById(id:int): Bezeroa</text>
+    </g>
+  </g>
+  <g>
+    <g>
+      <rect style="fill: #ffffff" x="-1699.78" y="-708.143" width="370.984" height="214.217"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1699.78" y="-708.143" width="370.984" height="214.217"/>
+      <rect style="fill: #ffffff" x="-1699.78" y="-728.143" width="111.8" height="20"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1699.78" y="-728.143" width="111.8" height="20"/>
+      <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="-1697.78" y="-714.143">model.postgres</text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-1680.86" y="-695.503" width="145.3" height="44"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1680.86" y="-695.503" width="145.3" height="44"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="-1608.21" y="-680.303">&lt;&lt;@Entity&gt;&gt;</text>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-1608.21" y="-659.503">ProductCategory</text>
+      <rect style="fill: #ffffff" x="-1680.86" y="-651.503" width="145.3" height="8"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1680.86" y="-651.503" width="145.3" height="8"/>
+      <rect style="fill: #ffffff" x="-1680.86" y="-643.503" width="145.3" height="8"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1680.86" y="-643.503" width="145.3" height="8"/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-1517.87" y="-694.415" width="147.95" height="44"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1517.87" y="-694.415" width="147.95" height="44"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="-1443.89" y="-679.215">&lt;&lt;@Entity&gt;&gt;</text>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-1443.89" y="-658.415">ProductTemplate</text>
+      <rect style="fill: #ffffff" x="-1517.87" y="-650.415" width="147.95" height="8"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1517.87" y="-650.415" width="147.95" height="8"/>
+      <rect style="fill: #ffffff" x="-1517.87" y="-642.415" width="147.95" height="8"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1517.87" y="-642.415" width="147.95" height="8"/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-1679.69" y="-627.416" width="103.25" height="44"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1679.69" y="-627.416" width="103.25" height="44"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="-1628.06" y="-612.216">&lt;&lt;@Entity&gt;&gt;</text>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-1628.06" y="-591.416">ResCountry</text>
+      <rect style="fill: #ffffff" x="-1679.69" y="-583.416" width="103.25" height="8"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1679.69" y="-583.416" width="103.25" height="8"/>
+      <rect style="fill: #ffffff" x="-1679.69" y="-575.416" width="103.25" height="8"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1679.69" y="-575.416" width="103.25" height="8"/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-1522.82" y="-629.656" width="123.6" height="44"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1522.82" y="-629.656" width="123.6" height="44"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="-1461.02" y="-614.456">&lt;&lt;@Entity&gt;&gt;</text>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-1461.02" y="-593.656">SaleOrderLine</text>
+      <rect style="fill: #ffffff" x="-1522.82" y="-585.656" width="123.6" height="8"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1522.82" y="-585.656" width="123.6" height="8"/>
+      <rect style="fill: #ffffff" x="-1522.82" y="-577.656" width="123.6" height="8"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1522.82" y="-577.656" width="123.6" height="8"/>
+    </g>
+    <g>
+      <rect style="fill: #ffffff" x="-1679.52" y="-562.606" width="99.75" height="44"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1679.52" y="-562.606" width="99.75" height="44"/>
+      <text font-size="12.8" style="fill: #000000;text-anchor:middle;font-family:monospace;font-style:normal;font-weight:normal" x="-1629.64" y="-547.406">&lt;&lt;@Entity&gt;&gt;</text>
+      <text font-size="16" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:700" x="-1629.64" y="-526.606">ResPartner</text>
+      <rect style="fill: #ffffff" x="-1679.52" y="-518.606" width="99.75" height="8"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1679.52" y="-518.606" width="99.75" height="8"/>
+      <rect style="fill: #ffffff" x="-1679.52" y="-510.606" width="99.75" height="8"/>
+      <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="-1679.52" y="-510.606" width="99.75" height="8"/>
+    </g>
+  </g>
+</svg>
