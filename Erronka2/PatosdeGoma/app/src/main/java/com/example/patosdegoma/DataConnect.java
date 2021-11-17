@@ -21,18 +21,30 @@ public class DataConnect extends Thread {
     final public static String pass = "openpgpwd";
 
 
+    //Konexio funtzioa
     public static Connection Connect() throws SQLException, ClassNotFoundException {
+        //Konexioa egiten saiatzen da
         try {
+            //PostgreSQL-ren driver-a
             Class.forName("org.postgresql.Driver");
+            /*
+            Helbidea, erabiltzailea eta pasahitzaren bitartez konexioa egin eta bueltatzen da
+            url   =>  jdbc:postgresql://192.168.65.15:5432/PatitosdeGoma
+            user  =>  openpg
+            pass  =>  openpgpwd
+            */
             Connection conn = DriverManager.getConnection(url, user, pass);
             return conn;
+        //SQL salbuespena
         } catch (SQLException se) {
-            Log.d("SQLException", "oops! No se puede conectar. Error: " + se.toString());
+            Log.d("SQLException", "No se puede conectar. Error: " + se.toString());
+        //Driver sabuespena
         } catch (ClassNotFoundException e) {
-            Log.d("ClassNotFoundException", "oops! No se encuentra la clase. Error: " + e.getMessage());
+            Log.d("ClassNotFoundException", "No se encuentra la clase. Error: " + e.getMessage());
         }
         return null;
     }
+
 
     public static void SalmentakQuery(){
         SalmentakQuery.setPriority(Thread.MAX_PRIORITY);
@@ -83,17 +95,23 @@ public class DataConnect extends Thread {
         }
     }
 
+    //Produktuen lista hartzen duen haria
     static Thread ProduktuakQuery = new Thread(() ->
     {
+        //Produktuak hartzeko saiakera egiten du
         try {
+            //Query-a
             String query = "select product_template.id, product_template.name, " +
                     "product_category.complete_name as category, product_template.list_price, " +
                     "product_template.default_code from product_template\n" +
                     "inner join product_category on product_template.categ_id =product_category.id \n" +
                     "order by name asc";
+            //Connect() funtzioari deitzen zaio konexioa gordetzeko
             Connection conn = Connect();
+            //Query-a gorde eta exekutatzen da
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery(query);
+            //Hemen bueltatutako produktu guztiak Produktua klasean dagoen produktuak ArrayList-ean gordetzen dira
             while (rs.next()) {
                 Produktua p = new Produktua(
                         rs.getInt(1), rs.getString(2), rs.getString(3),
@@ -101,6 +119,7 @@ public class DataConnect extends Thread {
                 );
                 Produktua.produktuak.add(p);
             }
+            //Kategoriak Produktua klasean dagoen categorias ArrayList-ean gordetzen diraa
             Produktua.categoriasToArray();
             conn.close();
         } catch (Exception e) {
