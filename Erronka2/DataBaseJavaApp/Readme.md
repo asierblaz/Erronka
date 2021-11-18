@@ -1,7 +1,8 @@
 # Datu Atzipena
 Spring erabilita eta hibernate orm a ren laguntzarekin postgres datu basetik interesatzen zaizkigun entitateak mapeatu ditugu eta sql express zerbitzari batean entitate berriak sortu ditugu interesatzen zitzaizkigun datuekin
 
-![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/910799473628811264/unknown.png" Proiektu Egitura")
+![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/910799473628811264/unknown.png "Proiektu Egitura")
+![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/898469337629868063/AndroidAplikazioa.png "Android Klase Diagrama")
 
 Aplikazio honetan klase guztiak paketeetan antolatu ditugu, model.postgres-en PostgreSql datu basetik hartuko ditugun taulak mapeatu ditugu, aldiz model.sqlserver-en aurreko entitateetatik datuak hartzen ditugu eta sortutako entitate berrietan txertatuko ditugu sqlServer-en gordetzeko.
 
