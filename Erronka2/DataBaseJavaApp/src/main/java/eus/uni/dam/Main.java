@@ -170,8 +170,6 @@ public class Main {
 		try {
 
 			ProcessBuilder pb = new ProcessBuilder("C:\\Program Files\\Internet Explorer\\iexplore.exe\"","file:///C:/Users/blazquez.asier/Documents/DAM2/Erronka/Erronka2/DataBaseJavaApp/options.xml");
-			// ProcessBuilder pb = new ProcessBuilder("chrome",
-			// "C:\\Users\\blazquez.asier\\Desktop\\Nueva carpeta\\options.xml");
 			Process p1 = pb.start();
 
 		} catch (Exception e) {
