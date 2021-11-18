@@ -14,7 +14,7 @@ Horretaz gain aplikazioak exportazio bat egiten duen bakoitzean log batean erreg
 
 *Xml-Aren egitura:*
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><?xml-stylesheet type="text/xsl" href="options.xslt"?>
 <document>
 	<options>
