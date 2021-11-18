@@ -32,7 +32,7 @@ Horretaz gain aplikazioak exportazio bat egiten duen bakoitzean log batean erreg
 </document>
 ```
 
-##Klase Diagrama:
+### Klase Diagrama:
 
 ![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/910830806308646922/Diagrama.png "Klase Diagrama")
 
