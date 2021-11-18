@@ -38,4 +38,35 @@ Horretaz gain aplikazioak exportazio bat egiten duen bakoitzean log batean erreg
 
 Aplikazioa exekutatzean hurrengo menua ikusiko dugu:
 
-![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/910798345486860288/unknown.png "Proiektu Egitura")
+![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/910798345486860288/unknown.png "Menu")
+
+1.Datu Guztiak Esportatu:
+
+Datuak esportatuko dira postgresSql-tik SqlServer-era eta loguean lerro berri bat gehituko da, fitxategia ez bada existitzen mezu bat aterako da eta xml berri bat sortuko du.
+
+![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/910817831438938132/unknown.png "Menu")
+
+2.Esportatu nahi diren datuak aukeratu:
+
+![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/910825339968704523/unknown.png "Menu")
+
+1. X produktu baino gehiago dituzten erosketak
+aukera hau aukeratzen badugu sartutako zenbakia baino produktu gutxiago dituzten erosketak gordeko dira sqlserveren eta xmlan <ProduktuKopurua> eguneratuko da log-arekin batera.
+
+2. Azken Exportazioaren konfigurazioa;
+    xml-an ProduktuKopurua irakurriko du, 0 bada esan nahi du ez dagoela aurretik konfiuraziorik, aldiz beste zenbaki bat bada kopuru hori baino produktu gutxiago dituzten produktuak esportatuko ditu.
+
+![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/910825977377095730/unknown.png "Menu")
+
+3. Atzera
+    Aurreko menura itzuliko gara
+	
+![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/910798345486860288/unknown.png "Menu")
+
+3. Log-a Irakurri
+
+![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/910827089953959956/unknown.png "Menu")
+
+4. Log-a Ikusi
+    aukera hau prozesu bat sortuko du eta internet Explorer nabigatzailea options.xml-a irekiko da, xml-ari xslt diseinua jarri diogu.
+![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/910827252613267516/unknown.png "Menu")
