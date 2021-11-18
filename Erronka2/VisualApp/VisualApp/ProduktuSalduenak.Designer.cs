@@ -33,15 +33,13 @@ namespace VisualApp
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ProduktuChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.produktuSalduenakDataSet = new VisualApp.ProduktuSalduenaDataSet();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.tituloLabel = new System.Windows.Forms.Label();
             this.ProduktuKopurua = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProduktuChart)).BeginInit();
+            this.ProduktuChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.produktuSalduenakDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProduktuChart)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -59,38 +57,6 @@ namespace VisualApp
             this.button1.TabIndex = 0;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.groupBox1.Controls.Add(this.ProduktuChart);
-            this.groupBox1.Location = new System.Drawing.Point(168, 145);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(593, 394);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            // 
-            // ProduktuChart
-            // 
-            this.ProduktuChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProduktuChart.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
-            chartArea1.Name = "BezeroaChart";
-            this.ProduktuChart.ChartAreas.Add(chartArea1);
-            this.ProduktuChart.Location = new System.Drawing.Point(0, 8);
-            this.ProduktuChart.Name = "ProduktuChart";
-            this.ProduktuChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
-            series1.ChartArea = "BezeroaChart";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series1.ShadowColor = System.Drawing.Color.Black;
-            this.ProduktuChart.Series.Add(series1);
-            this.ProduktuChart.Size = new System.Drawing.Size(593, 386);
-            this.ProduktuChart.TabIndex = 0;
-            this.ProduktuChart.Text = "chart1";
             // 
             // produktuSalduenakDataSet
             // 
@@ -132,6 +98,28 @@ namespace VisualApp
             this.ProduktuKopurua.TabIndex = 9;
             this.ProduktuKopurua.Text = "Produktu Kopurua: 8";
             // 
+            // ProduktuChart
+            // 
+            this.ProduktuChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProduktuChart.BackColor = System.Drawing.Color.Transparent;
+            chartArea1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            chartArea1.Name = "BezeroaChart";
+            this.ProduktuChart.ChartAreas.Add(chartArea1);
+            this.ProduktuChart.Location = new System.Drawing.Point(159, 153);
+            this.ProduktuChart.Name = "ProduktuChart";
+            this.ProduktuChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
+            series1.ChartArea = "BezeroaChart";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            series1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series1.ShadowColor = System.Drawing.Color.Black;
+            this.ProduktuChart.Series.Add(series1);
+            this.ProduktuChart.Size = new System.Drawing.Size(593, 386);
+            this.ProduktuChart.TabIndex = 0;
+            this.ProduktuChart.Text = "chart1";
+            // 
             // ProduktuSalduenak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -139,19 +127,18 @@ namespace VisualApp
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(899, 598);
+            this.Controls.Add(this.ProduktuChart);
             this.Controls.Add(this.ProduktuKopurua);
             this.Controls.Add(this.tituloLabel);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "ProduktuSalduenak";
             this.Text = "Bat";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Close);
             this.Load += new System.EventHandler(this.ProduktuSalduenak_Load);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ProduktuChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.produktuSalduenakDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProduktuChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -160,13 +147,11 @@ namespace VisualApp
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.GroupBox groupBox1;
-
-        private System.Windows.Forms.DataVisualization.Charting.Chart ProduktuChart;
         private ProduktuSalduenaDataSet produktuSalduenakDataSet;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label tituloLabel;
         private System.Windows.Forms.Label ProduktuKopurua;
+        private System.Windows.Forms.DataVisualization.Charting.Chart ProduktuChart;
     }
 }
 

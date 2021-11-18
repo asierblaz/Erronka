@@ -98,6 +98,9 @@ namespace VisualApp
             System.Windows.Forms.Application.Exit();
         }
 
+        private void MenuNagusia_Load(object sender, EventArgs e)
+        {
 
+        }
     }
 }

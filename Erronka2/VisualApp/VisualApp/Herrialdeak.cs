@@ -47,8 +47,6 @@ namespace VisualApp
 
 
 
-            //DataSourceUpdateMode
-
 
         }
         private void Form_Close(object sender, System.EventArgs e)
@@ -60,6 +58,11 @@ namespace VisualApp
         private void button1_Click_1(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void HerrialdeChart_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

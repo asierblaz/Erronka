@@ -30,11 +30,9 @@ namespace VisualApp
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Herrialdeak));
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Herrialdeak));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.HerrialdeChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.herrialdeakDataSet1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.herrialdeakDataSet1 = new VisualApp.HerrialdeakDataSet();
             this.herrialdeBistaBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -44,47 +42,13 @@ namespace VisualApp
             this.ErosketaKopurua = new System.Windows.Forms.Label();
             this.tituloLabel = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.HerrialdeChart)).BeginInit();
+            this.HerrialdeChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.herrialdeakDataSet1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.herrialdeakDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.herrialdeBistaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.herrialdeakDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HerrialdeChart)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.groupBox1.Controls.Add(this.HerrialdeChart);
-            this.groupBox1.Location = new System.Drawing.Point(147, 129);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(577, 393);
-            this.groupBox1.TabIndex = 2;
-            this.groupBox1.TabStop = false;
-            // 
-            // HerrialdeChart
-            // 
-            this.HerrialdeChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            chartArea1.Area3DStyle.Enable3D = true;
-            chartArea1.Area3DStyle.Inclination = 40;
-            chartArea1.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
-            chartArea1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
-            chartArea1.Name = "HerrialdeChart";
-            this.HerrialdeChart.ChartAreas.Add(chartArea1);
-            this.HerrialdeChart.Cursor = System.Windows.Forms.Cursors.Default;
-            this.HerrialdeChart.Location = new System.Drawing.Point(-6, 19);
-            this.HerrialdeChart.Name = "HerrialdeChart";
-            this.HerrialdeChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series1.ChartArea = "HerrialdeChart";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.HerrialdeChart.Series.Add(series1);
-            this.HerrialdeChart.Size = new System.Drawing.Size(577, 374);
-            this.HerrialdeChart.TabIndex = 0;
-            this.HerrialdeChart.Text = "chart1";
             // 
             // herrialdeakDataSet1BindingSource
             // 
@@ -159,6 +123,32 @@ namespace VisualApp
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // HerrialdeChart
+            // 
+            this.HerrialdeChart.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            chartArea1.Area3DStyle.Enable3D = true;
+            chartArea1.Area3DStyle.Inclination = 50;
+            chartArea1.Area3DStyle.LightStyle = System.Windows.Forms.DataVisualization.Charting.LightStyle.Realistic;
+            chartArea1.Area3DStyle.PointGapDepth = 200;
+            chartArea1.BackImageAlignment = System.Windows.Forms.DataVisualization.Charting.ChartImageAlignmentStyle.Center;
+            chartArea1.Name = "HerrialdeChart";
+            this.HerrialdeChart.ChartAreas.Add(chartArea1);
+            this.HerrialdeChart.Cursor = System.Windows.Forms.Cursors.Default;
+            this.HerrialdeChart.Location = new System.Drawing.Point(-120, 80);
+            this.HerrialdeChart.Name = "HerrialdeChart";
+            this.HerrialdeChart.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series1.ChartArea = "HerrialdeChart";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.HerrialdeChart.Series.Add(series1);
+            this.HerrialdeChart.Size = new System.Drawing.Size(889, 470);
+            this.HerrialdeChart.TabIndex = 0;
+            this.HerrialdeChart.Text = "chart1";
+            this.HerrialdeChart.Click += new System.EventHandler(this.HerrialdeChart_Click);
+            // 
             // Herrialdeak
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,26 +159,22 @@ namespace VisualApp
             this.Controls.Add(this.tituloLabel);
             this.Controls.Add(this.ErosketaKopurua);
             this.Controls.Add(this.EzezagunakKant);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.HerrialdeChart);
             this.Name = "Herrialdeak";
             this.Text = "Herrialdeak";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Close);
             this.Load += new System.EventHandler(this.Herrialdeak_Load);
-            this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.HerrialdeChart)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.herrialdeakDataSet1BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.herrialdeakDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.herrialdeBistaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.herrialdeakDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HerrialdeChart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataVisualization.Charting.Chart HerrialdeChart;
         private System.Windows.Forms.BindingSource herrialdeakDataSet1BindingSource;
         private HerrialdeakDataSet herrialdeakDataSet1;
         private HerrialdeakDataSet herrialdeakDataSet2;
@@ -198,5 +184,6 @@ namespace VisualApp
         private System.Windows.Forms.Label ErosketaKopurua;
         private System.Windows.Forms.Label tituloLabel;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataVisualization.Charting.Chart HerrialdeChart;
     }
 }

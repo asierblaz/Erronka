@@ -1,0 +1,16 @@
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\bin\Release\VisualApp.exe.config
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\bin\Release\VisualApp.exe
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\bin\Release\VisualApp.pdb
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\bin\Release\Funciones.dll
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\bin\Release\Funciones.pdb
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\bin\Release\Funciones.dll.config
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Release\VisualApp.Herrialdeak.resources
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Release\VisualApp.ProduktuSalduenak.resources
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Release\VisualApp.BezeroErosketak.resources
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Release\VisualApp.MenuNagusia.resources
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Release\VisualApp.Properties.Resources.resources
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Release\VisualApp.csproj.GenerateResource.cache
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Release\VisualApp.csproj.CoreCompileInputs.cache
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Release\VisualApp.exe
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Release\VisualApp.pdb
+C:\Users\zengotita.jon\Desktop\Jon Zengotita Lanak\T4\Erronka\Erronka2\VisualApp\VisualApp\obj\Release\VisualApp.csproj.AssemblyReference.cache

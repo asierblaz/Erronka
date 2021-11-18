@@ -106,18 +106,18 @@ namespace VisualApp
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(899, 598);
             this.Controls.Add(this.hiruJoan);
             this.Controls.Add(this.biJoan);
             this.Controls.Add(this.batJoan);
             this.Controls.Add(this.pictureBox1);
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.Color.White;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.ForeColor = System.Drawing.Color.Transparent;
             this.Name = "MenuNagusia";
             this.ShowIcon = false;
-            this.Text = "MenuNagusia";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_Close);
+            this.Load += new System.EventHandler(this.MenuNagusia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
