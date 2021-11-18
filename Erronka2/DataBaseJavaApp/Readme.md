@@ -68,6 +68,7 @@ aukera hau aukeratzen badugu sartutako zenbakia baino produktu gutxiago dituzten
 ![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/910827089953959956/unknown.png "Menu")
 
 4. Log-a Ikusi
+	
     aukera hau prozesu bat sortuko du eta internet Explorer nabigatzailea options.xml-a irekiko da, xml-ari xslt diseinua jarri diogu.
 	
 ![Alt text](https://cdn.discordapp.com/attachments/805837040566534207/910827252613267516/unknown.png "Menu")
