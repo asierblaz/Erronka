@@ -50,7 +50,7 @@ public class Main {
 
 				System.out.println("\tESPORTATU NAHI DIREN DATUAK AUKERATU\n" + "====================================\n"
 						+ "1.- X produktu baino gutxiago dituzten erosketak\n"
-						+ "2.- Azken Exportazioaren Configurazioa\n" + "3.- Atzera");
+						+ "2.- Azken Exportazioaren konfigurazioa\n" + "3.- Atzera");
 
 				System.out.print("\nAukeratu zenbaki bat ");
 
@@ -105,7 +105,7 @@ public class Main {
 					System.out.println(
 							"\tESPORTATU NAHI DIREN DATUAK AUKERATU\n" + "====================================\n"
 									+ "1.- X produktu baino gutxiago dituzten erosketak\n"
-									+ "2.- Azken Exportazioaren Configurazioa\n" + "3.- Atzera");
+									+ "2.- Azken Exportazioaren konfigurazioa\n" + "3.- Atzera");
 
 					System.out.print("\nAukeratu zenbaki bat ");
 					aukera = in.nextInt();
